@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gas Network Resilience with Reinforcement Learning — Project Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Q-learning controller for gas pipeline resilience during cold spells. Pandapipes simulation, reward shaping on minimum pressure, and policy convergence." />
+</head>
+<body>
+
+  <!-- Simple top bar with back link -->
+  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
+    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  </header>
+
+  <main class="detail-page">
+    <!-- Title and quick actions -->
+    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
+      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
+        Gas Network Resilience with Reinforcement Learning
+      </h1>
+      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:900px; line-height:1.6;">
+        Q-learning agent trained in a pandapipes simulation to keep gas-grid pressures within safe bounds during cold-spell demand spikes.
+        Policy learns where to add sources and at what rates to stabilise the network quickly.
+      </p>
+      <div class="card-actions" style="justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/Misharasapu/gas-network-resilience-rl" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="assets/gas-network-rl-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+      </div>
+    </section>
+
+    <!-- Hero visual (pipe layout) -->
+    <section style="padding:0 20px 30px;">
+      <figure style="max-width:1000px; margin:0 auto;">
+        <img
+          class="thumb"
+          src="assets/gas-pipe-layout.png"
+          alt="Pipe network layout with external grid and three candidate source locations"
+          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
+        />
+        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
+          Simulated pipe network. Red dots are junctions, grey arrows are sinks, yellow square is the external grid.
+          The RL agent chooses among candidate source locations to restore pressure.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Content -->
+    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
+      <p style="color:#cccccc;">
+        Cold spells push demand up and can drive junction pressures below safe thresholds. The goal is to learn a control
+        policy that intervenes with minimal changes to keep the minimum network pressure within target limits.
+      </p>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
+      <ul class="bullets">
+        <li><strong>Simulation:</strong> pandapipes digital twin with sinks (demand), external grid, and configurable pipe parameters.</li>
+        <li><strong>RL setup:</strong> Q-learning with epsilon-greedy exploration. State is discretised minimum pressure; actions add or adjust sources at candidate nodes.</li>
+        <li><strong>Reward shaping:</strong> positive reward for moving the min pressure toward a threshold; penalties for violations; episode ends when stable.</li>
+        <li><strong>Evaluation:</strong> pressure distribution before/after, Q-value convergence, action frequency, and reward vs random policy.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
+      <ul class="bullets">
+        <li>Agent converged to a stable policy that kept pressures within ±10% of the reference more consistently than random control.</li>
+        <li>Q-values and action frequencies concentrated on a small set of high-impact source locations.</li>
+        <li>Recovery time and minimum pressure improved across episodes, demonstrating resilience gains under cold-spell scenarios.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
+      <p style="color:#cccccc;">
+        Python, pandapipes, NumPy, pandas, matplotlib, NetworkX. Custom Q-learning implementation with reproducible training runs.
+      </p>
+
+      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/Misharasapu/gas-network-resilience-rl" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="assets/gas-network-rl-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+        <a class="btn btn-secondary" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

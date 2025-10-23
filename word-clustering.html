@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Word Clustering and Nonlinear Classification — Project Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Unsupervised word clustering with HAC on literary text and supervised nonlinear classification on synthetic data comparing logistic regression with a shallow neural network." />
+</head>
+<body>
+
+  <!-- Simple top bar with back link -->
+  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
+    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  </header>
+
+  <main class="detail-page">
+    <!-- Title and quick actions -->
+    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
+      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
+        Word Clustering and Nonlinear Classification
+      </h1>
+      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:900px; line-height:1.6;">
+        Two-part AI coursework. Task one builds unsupervised clusters of frequent words from Gothic fiction using hierarchical agglomerative clustering. 
+        Task two explores nonlinear decision boundaries on synthetic data, comparing logistic regression with a shallow neural network.
+      </p>
+      <div class="card-actions" style="justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/misharasapu/ai-word-clustering-and-nonlinear-classification" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="assets/ai-project-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+      </div>
+    </section>
+
+    <!-- Hero visual (Task 2: decision boundary) -->
+    <section style="padding:0 20px 30px;">
+      <figure style="max-width:1000px; margin:0 auto;">
+        <img
+          class="thumb"
+          src="assets/ai-decision-boundary.png"
+          alt="Nonlinear decision boundary separating two classes on synthetic data"
+          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
+        />
+        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
+          Task two decision boundary. A shallow neural network captures curvature that a linear logistic model cannot.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Content -->
+    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
+      <p style="color:#cccccc;">
+        Discover structure in text without labels and then compare linear versus nonlinear classifiers on a controlled dataset. 
+        The goal is to show when simple models are sufficient and when flexible function classes are needed.
+      </p>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
+      <ul class="bullets">
+        <li><strong>Word clustering:</strong> built a word co-occurrence matrix from Gothic fiction chapters, then applied hierarchical agglomerative clustering with an appropriate distance linkage to form semantic groups. Visualised with dendrograms.</li>
+        <li><strong>Nonlinear classification:</strong> generated a two-class synthetic dataset with curved class boundaries. Trained logistic regression and a small feed-forward neural network with regularisation and early stopping.</li>
+        <li><strong>Evaluation:</strong> assessed cluster interpretability qualitatively and compared classifiers with standard accuracy metrics and decision boundary plots.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
+      <ul class="bullets">
+        <li>HAC produced coherent word groups that reflected character names, settings, and thematic vocabulary from the corpus.</li>
+        <li>The neural network model recovered the curved boundary and achieved higher accuracy than logistic regression on the nonlinear dataset.</li>
+        <li>Logistic regression remained competitive on more linearly separable configurations and provided interpretable coefficients.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
+      <p style="color:#cccccc;">
+        Python, NumPy, pandas, scikit-learn (HAC, logistic regression, MLPClassifier), matplotlib. Reproducible notebooks and fixed seeds.
+      </p>
+
+      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/misharasapu/ai-word-clustering-and-nonlinear-classification" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="assets/ai-project-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+        <a class="btn btn-secondary" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

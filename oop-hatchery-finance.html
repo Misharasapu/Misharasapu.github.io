@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modelling Systems & Markets in Python — Project Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Two-part project: Python OOP simulation of a fish hatchery and a finance notebook comparing stocks vs crypto with reproducible EDA." />
+</head>
+<body>
+
+  <!-- Simple top bar with back link -->
+  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
+    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  </header>
+
+  <main class="detail-page">
+    <!-- Title and quick actions -->
+    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
+      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
+        Modelling Systems & Markets in Python
+      </h1>
+      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:900px; line-height:1.6;">
+        Two-part project: a cleanly designed Python OOP simulation for hatchery operations,
+        and a finance notebook that analyses stocks and crypto with reproducible EDA.
+      </p>
+      <div class="card-actions" style="justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/Misharasapu/oop-hatchery-simulation-and-finance-eda" target="_blank" rel="noopener">View repo</a>
+      </div>
+    </section>
+
+    <!-- Hero visual (Finance EDA) -->
+    <section style="padding:0 20px 30px;">
+      <figure style="max-width:1000px; margin:0 auto;">
+        <img
+          class="thumb"
+          src="assets/finance-cumulative.png"
+          alt="Cumulative returns comparison for equity and crypto series"
+          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
+        />
+        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
+          Finance EDA, cumulative returns. The notebook contrasts equity and crypto behaviour with consistent preprocessing and metrics.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Content -->
+    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
+      <p style="color:#cccccc;">
+        Build a maintainable simulation for quarterly operations and a clear, reproducible analysis pipeline for market data.
+        The aim is robust engineering in Task 1 and trustworthy analytics in Task 2.
+      </p>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
+      <ul class="bullets">
+        <li><strong>Task 1:</strong> modular classes for the core entities (hatchery, warehouse, supplier, technicians, fish species). Responsibilities are separated: cash flow and labour, stock and depreciation, vendor pricing, species requirements, and technician wages and specialty logic.</li>
+        <li><strong>Task 2:</strong> tidy ingest, cleaning, feature engineering, and exploratory plots. Compared risk and return profiles for equities and crypto using consistent windows and summary statistics.</li>
+        <li><strong>Reproducibility:</strong> documented methods, defensive input handling in the simulation loop, and deterministic figure export (size and DPI) from the notebook.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
+      <ul class="bullets">
+        <li><strong>Simulation:</strong> complete quarterly cycles with hiring and firing, sales within labour and stock constraints, depreciation and restocking, and clear console summaries each cycle.</li>
+        <li><strong>Analytics:</strong> clear separation between preprocessing and visuals, producing plots that make asset behaviour and volatility-return trade-offs obvious at a glance.</li>
+        <li><strong>Code quality:</strong> class docstrings, single-responsibility methods, and error handling for user input across the main loop.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
+      <p style="color:#cccccc;">
+        Python. OOP modules for the simulation, pandas, NumPy, and matplotlib for analysis, and reproducible notebooks for EDA.
+      </p>
+
+      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/Misharasapu/oop-hatchery-simulation-and-finance-eda" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fire Detection Using Synthetic Data | Project Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Industry project with SYNOPTIX: fire detection using a ResNet-50 model trained on mixed real and synthetic images. Interpreted with Grad-CAM and evaluated with ROC/PR." />
+</head>
+<body>
+
+  <!-- Simple top bar with back link -->
+  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
+    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  </header>
+
+  <main class="detail-page">
+    <!-- Title and quick actions -->
+    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
+      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
+        Fire Detection Using Synthetic Data
+      </h1>
+      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:850px; line-height:1.6;">
+        Industry dissertation with <strong>SYNOPTIX Ltd</strong>. I built a computer vision model to detect indoor fires using a mix of real and synthetic images. The goal was strong accuracy with less real data. I used ResNet‑50 for classification, Grad‑CAM for explanations, and standard ROC/PR evaluation.
+      </p>
+      <div class="card-actions" style="justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/misharasapu/fire-detection-dissertation" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="assets/fire-detection-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+      </div>
+    </section>
+
+    <!-- Hero visual -->
+    <section style="padding:0 20px 30px;">
+      <figure style="max-width:1000px; margin:0 auto;">
+        <img
+          class="thumb"
+          src="assets/fire-gradcam.png"
+          alt="Grad-CAM overlay showing the model focusing on flame regions for indoor fire detection"
+          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
+        />
+        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
+          Grad‑CAM visualisation highlights the areas the model uses to detect flames.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Content -->
+    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
+      <p style="color:#cccccc;">
+        Real indoor fire images are hard to collect and label. We wanted to see if synthetic images could replace a large share of the real data while keeping low false alarms and high recall for a CCTV setting.
+      </p>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
+      <ul class="bullets">
+        <li>Trained and fine tuned a ResNet‑50 classifier on different mixes of real and synthetic images.</li>
+        <li>Kept dataset sizes fixed with a set random seed for fair comparison. Used simple [0, 1] scaling.</li>
+        <li>Evaluated with ROC and PR curves, confusion matrices, and per class metrics. Used Grad‑CAM to check if the model focused on flames and smoke.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
+      <ul class="bullets">
+        <li><strong>Indoor deployment mix (50% real, 50% synthetic):</strong> F1 0.984, MCC 0.972, ROC AUC about 0.999 on the indoor test set.</li>
+        <li><strong>Domain shift:</strong> The 50/50 fine tuned model beat real only training when moving from outdoor to indoor images.</li>
+        <li><strong>Data efficiency:</strong> The mixed data model reached strong performance with far fewer real images compared with real only training.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
+      <p style="color:#cccccc;">
+        Python, PyTorch (ResNet‑50), torchvision, scikit‑learn, matplotlib, Grad‑CAM. Experiments run in Google Colab with saved JSON metrics and plots.
+      </p>
+
+      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/misharasapu/fire-detection-dissertation" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="assets/fire-detection-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+        <a class="btn btn-secondary" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Text Analytics: Climate and Twitter NER — Project Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Climate sentiment classification, topic modelling with LDA, and Twitter NER. Naive Bayes baseline, BERT variants, and entity-level evaluation on BTC." />
+</head>
+<body>
+
+  <!-- Simple top bar with back link -->
+  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
+    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  </header>
+
+  <main class="detail-page">
+    <!-- Title and quick actions -->
+    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
+      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
+        Text Analytics: Climate and Twitter NER
+      </h1>
+      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:900px; line-height:1.6;">
+        End-to-end NLP coursework covering climate sentiment classification, topic modelling of risk and opportunity disclosures, and named entity recognition on Twitter.
+        The project compares classic baselines with transformer methods and reports entity-level metrics suitable for real extraction tasks.
+      </p>
+      <div class="card-actions" style="justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/misharasapu/text-analytics-climate-and-twitter-ner" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="assets/text-analytics-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+      </div>
+    </section>
+
+    <!-- Hero visual (LDA) -->
+    <section style="padding:0 20px 30px;">
+      <figure style="max-width:1000px; margin:0 auto;">
+        <img
+          class="thumb"
+          src="assets/text-analytics-lda.png"
+          alt="LDA topic bar chart illustrating top terms for climate-related disclosures"
+          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
+        />
+        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
+          LDA topic visual for climate disclosures. TF-IDF input produced clearer, more coherent topics on this small corpus.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Content -->
+    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
+      <p style="color:#cccccc;">
+        Extract actionable information from climate disclosures and noisy social text. Build quick yet reliable classifiers for sentiment, surface themes with topic modelling, and evaluate named entity recognition with strict span-level metrics.
+      </p>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
+      <ul class="bullets">
+        <li>Climate sentiment: compared Naive Bayes, a small neural net, and a compact transformer on ClimateBERT samples, tuning n-grams and minimum document frequency for best balance.</li>
+        <li>Topic modelling: used LDA on risk and opportunity subsets with Count and TF-IDF vectorisation, measuring coherence and interpretability.</li>
+        <li>Twitter NER: fine-tuned <code>bert-base-cased</code> for BIO tagging on the BTC dataset, reporting precision, recall, and F1 at the entity level.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
+      <ul class="bullets">
+        <li><strong>Climate sentiment:</strong> Naive Bayes reached <strong>79.0% accuracy</strong>, outperforming the neural and transformer baselines on this low-resource setup.</li>
+        <li><strong>LDA topics:</strong> TF-IDF input achieved higher coherence (<strong>0.4445</strong>) than Count (<strong>0.4347</strong>), producing sharper, domain-specific topics.</li>
+        <li><strong>Twitter NER:</strong> Overall entity-level F1 <strong>77.9%</strong>, with PER <strong>88.7%</strong>, LOC <strong>67.1%</strong>, ORG <strong>57.4%</strong>; token-level F1 <strong>77.03%</strong>.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
+      <p style="color:#cccccc;">
+        Python, pandas, scikit-learn, matplotlib, transformers (Hugging Face). LDA topic modelling and reproducible Jupyter notebooks with fixed seeds.
+      </p>
+
+      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/misharasapu/text-analytics-climate-and-twitter-ner" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="assets/text-analytics-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+        <a class="btn btn-secondary" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

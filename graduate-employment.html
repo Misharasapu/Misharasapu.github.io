@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Graduate Employment Visual Analytics — Project Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Graduate employment disparities across England and Wales, 2011 to 2021. Harmonised census data, Tableau visual analytics, PCA clustering, and Bayesian Ridge forecasting to 2030." />
+</head>
+<body>
+
+  <!-- Simple top bar with back link -->
+  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
+    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  </header>
+
+  <main class="detail-page">
+    <!-- Title and quick actions -->
+    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
+      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
+        Graduate Employment Visual Analytics
+      </h1>
+      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:900px; line-height:1.6;">
+        Regional analysis of graduate employment across England and Wales using harmonised census data for 2011 and 2021.
+        Tableau storytelling highlights spatial patterns and change over time. Python analytics uses PCA and Bayesian Ridge to forecast 2030 outcomes.
+      </p>
+      <div class="card-actions" style="justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/misharasapu/graduate-employment-visual-analytics" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="assets/graduate-employment-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+      </div>
+    </section>
+
+    <!-- Hero visual -->
+    <section style="padding:0 20px 30px;">
+      <figure style="max-width:1000px; margin:0 auto;">
+        <img
+          class="thumb"
+          src="assets/graduate-employment-map.png"
+          alt="Choropleth map showing percentage point change in graduate employment between 2011 and 2021 across England and Wales"
+          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
+        />
+        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
+          Percentage point change in graduate employment from 2011 to 2021 by local authority. Green increased. Red decreased.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Content -->
+    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
+      <p style="color:#cccccc;">
+        Graduate outcomes vary widely by region. Policymakers and universities need a clear view of where employment is improving, where it is lagging, and how the structure of local economies relates to future prospects.
+      </p>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
+      <ul class="bullets">
+        <li>Harmonised 2011 and 2021 census variables to 292 local authority districts on 2021 boundaries.</li>
+        <li>Tableau stories with choropleths, ranked bars, and diverging bars to communicate level and change.</li>
+        <li>PCA on normalised indicators to reveal structural similarity. Bayesian Ridge used to forecast graduate employment to 2030 with uncertainty bands.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
+      <ul class="bullets">
+        <li>Clear urban advantage and persistent coastal and rural pockets of lower graduate employment growth.</li>
+        <li>PCA separated regions into coherent clusters that align with industry mix and higher education density.</li>
+        <li>Bayesian Ridge produced stable 2030 forecasts and credible intervals suitable for planning and scenario discussion.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
+      <p style="color:#cccccc;">
+        Tableau, Python, pandas, scikit-learn (PCA, BayesianRidge), matplotlib. Clean data joins and reproducible preprocessing in notebooks.
+      </p>
+
+      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
+        <a class="btn" href="https://github.com/misharasapu/graduate-employment-visual-analytics" target="_blank" rel="noopener">View repo</a>
+        <a class="btn btn-secondary" href="assets/graduate-employment-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+        <a class="btn btn-secondary" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
