@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Computer Vision for Bike Wear Assessment, Brompton Bicycle</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="AI/ML Engineering Internship at Brompton Bicycle. Computer vision system for bike component wear assessment combining multi-class classification with confidence-calibrated decision logic." />
+</head>
+<body>
+
+  <!-- Simple top bar with back link -->
+  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
+    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  </header>
+
+  <main class="detail-page">
+    <!-- Title and quick actions -->
+    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
+      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
+        Computer Vision for Bike Wear Assessment
+      </h1>
+      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:850px; line-height:1.6;">
+        AI/ML Engineering Internship at Brompton Bicycle, London. I am building a computer vision system to assess bike component wear from images, intended for integration into Brompton's product ecosystem. The system combines image quality checks, multi-class wear classification, and confidence-calibrated decision logic to produce actionable, liability-aware maintenance recommendations.
+      </p>
+    </section>
+
+    <!-- Hero visual -->
+    <section style="padding:0 20px 30px;">
+      <figure style="max-width:1000px; margin:0 auto;">
+        <img
+          class="thumb"
+          src="assets/brompton-cv.png"
+          alt="Computer vision system for bike component wear assessment at Brompton Bicycle"
+          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
+        />
+      </figure>
+    </section>
+
+    <!-- Content -->
+    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
+      <p style="color:#cccccc;">
+        Manual inspection of bike components is inconsistent and hard to scale. The goal was a vision-based system that could classify tyre wear into three actionable categories, Good, Monitor, or Replace, with high reliability on the safety-critical Replace class.
+      </p>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
+      <ul class="bullets">
+        <li>Dataset acquisition was the highest-impact decision across the project. The training set grew from 321 to 817 images, with the Replace class expanding 6.5x through structured real-world data collection.</li>
+        <li>A second classifier was built to identify tyre type, Slick, Lite, or Heavy, enabling personalised service recommendations rather than generic outputs.</li>
+        <li>The evaluation framework was redesigned around Replace recall rather than overall accuracy after an initial model achieved 91% accuracy but caught only 1 in 8 unsafe tyres.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
+      <ul class="bullets">
+        <li>The final system uses a confidence-calibrated decision pipeline with tuned classification thresholds, designed to prioritise safety over headline accuracy.</li>
+        <li>The inference pipeline is modular, integrating image quality checks, multi-model inference, and recommendation logic, and is designed for extension to additional components and integration into app-based workflows.</li>
+      </ul>
+
+      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
+      <p style="color:#cccccc;">
+        Python, computer vision, multi-class classification, confidence calibration, modular inference pipeline design.
+      </p>
+
+      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
+        <a class="btn btn-secondary" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
