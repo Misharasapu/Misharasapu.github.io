@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mishara Sapukotanage | Data Science Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <!-- SEO: description + canonical -->
     <meta name="description" content="Portfolio of Mishara Sapukotanage (MSc Data Science, University of Bristol). Projects in computer vision, NLP, visual analytics, reinforcement learning, and Python OOP + finance EDA.">
     <link rel="canonical" href="https://misharasapu.github.io">
 
-    <!-- Favicon (put a PNG at assets/favicon.png) -->
-    <link rel="icon" href="assets/favicon.png">
 
     <!-- Open Graph (LinkedIn/FB/Slack previews) -->
     <meta property="og:type" content="website">
@@ -28,6 +29,7 @@
 </head>
 <body>
   <header>
+    <span class="hero-tag">AI/ML Engineer</span>
     <h1>Mishara Sapukotanage</h1>
     <p class="tagline">Data Science & AI Portfolio</p>
   </header>
@@ -222,6 +224,26 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+  <script>
+  const cards = document.querySelectorAll('.project-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(card);
+  });
+</script>
 
 </body>
 </html>
