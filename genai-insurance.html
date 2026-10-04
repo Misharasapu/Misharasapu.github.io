@@ -78,7 +78,7 @@
             <li class="metric metric--fact">
               <span class="metric__value">14</span>
               <span class="metric__name">Synthetic documents</span>
-              <span class="metric__context">Policies, ESG and incident reports of 700 to 1,000 words each</span>
+              <span class="metric__context">Policies, ESG and incident reports of about 700 to 1,900 words each</span>
             </li>
             <li class="metric metric--fact">
               <span class="metric__value">7</span>
@@ -141,7 +141,7 @@
           <div class="case-section__body">
             <div class="prose">
               <ul>
-                <li>The high-risk label is a proxy based on document type, because synthetic documents have no loss history, and document category is also one of the features, so the label partly leaks into the inputs.</li>
+                <li>The high-risk label is a proxy based on document type and line of business, because synthetic documents have no loss history, and document category is also one of the features, so the label partly leaks into the inputs.</li>
                 <li>Five test documents cannot support any claim about the classifier. The pipeline needs many more documents, ideally real ones with real outcomes.</li>
                 <li>I did not measure extraction accuracy against hand-labelled fields, which is what I would add first, so that schema validity and field correctness are reported separately.</li>
                 <li>Next steps I would take: retrieval-augmented extraction, SHAP for clearer feature effects, and evaluation on new unseen documents.</li>

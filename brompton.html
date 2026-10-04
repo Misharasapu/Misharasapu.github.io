@@ -70,7 +70,7 @@
                 <li class="flow__step"><span class="label">04</span><b>Tyre type model</b><span>Slick, Commuter Lite or Commuter Heavy</span></li>
                 <li class="flow__step flow__step--out"><span class="label">05</span><b>Advice</b><span>Next check or replacement, matched to how the rider rides</span></li>
               </ol>
-            <p class="diagram__note">Diagram of the system. No Brompton images or results are shown on this page.</p>
+            <p class="diagram__note">Diagram of the system. No Brompton images or later test results are shown on this page.</p>
           </div>
         </div>
 
@@ -79,7 +79,7 @@
             <li class="metric metric--fact">
               <span class="metric__value">321 &rarr; 817</span>
               <span class="metric__name">Tyre images</span>
-              <span class="metric__context">Labelled training images before and after five extra collection batches</span>
+              <span class="metric__context">Labelled tyre images in the dataset before and after five extra collection batches</span>
             </li>
             <li class="metric metric--fact">
               <span class="metric__value">~6.5x</span>
@@ -110,12 +110,12 @@
           <div class="case-section__body">
             <div class="prose">
               <p>I scoped the work to tyres only, because tyre wear is visible in a photo, it matters for safety, and of the parts in the original data (front and rear tyres, chains and brake pads) tyres gave the clearest signal.</p>
-              <p>The first model trained on the original 321 labelled tyre images, where unsafe tyres were rare. So before more modelling I collected five more batches from staff bikes, the workshop and recycled tyres, which grew the set to 817 images with about 6.5 times as many unsafe examples, and I kept every photo of the same physical tyre in the same split so the model could never be tested on a tyre it had already seen.</p>
-              <p>A second model identifies the tyre type, so whether it is a Slick, a Commuter Lite or a Commuter Heavy, which lets the advice suggest a suitable tyre rather than a generic one. Before any prediction is shown, an image quality gate checks resolution, blur and brightness, and a low-confidence result asks the rider to retake the photo.</p>
+              <p>The first model was built on the original dataset of 321 labelled tyre images, where unsafe tyres were rare. So before more modelling I collected five more batches from staff bikes, the workshop and recycled tyres, which grew the set to 817 images with about 6.5 times as many unsafe examples, and I kept every photo of the same physical tyre in the same split so the model could never be tested on a tyre it had already seen.</p>
+              <p>A second model identifies the tyre type, so whether it is a Slick, a Commuter Lite or a Commuter Heavy, which lets the advice suggest a suitable tyre rather than a generic one. Before any prediction is shown, an image quality gate checks resolution, blur and brightness, and a low-confidence result is designed to ask the rider to retake the photo, although that check was switched off during user testing.</p>
             </div>
             <div class="decision">
               <h3>Key decision: stop trusting accuracy</h3>
-              <p>The first model looked fine on accuracy, but it was catching only 1 in 8 unsafe tyres, because most tyres in the data were in good condition and the model had basically learned to call almost everything safe. So I made Replace recall the main metric, which means out of all the tyres that really needed replacing, how many the model caught, and every later choice of data, model and threshold was judged on that first.</p>
+              <p>The first model's accuracy looked high on paper, but it was catching only 1 in 8 unsafe tyres, and a model that simply called every tyre safe would have scored at least as well, because most tyres in the data were in good condition. So I made Replace recall the main metric, which means out of all the tyres that really needed replacing, how many the model caught, and every later choice of data, model and threshold was judged on that first.</p>
             </div>
           </div>
         </section>

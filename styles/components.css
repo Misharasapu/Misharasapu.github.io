@@ -63,9 +63,14 @@
   font-weight: 500;
 }
 
-.site-nav a[aria-current="page"],
-.site-nav a:hover {
+.site-nav a[aria-current="page"] {
   color: var(--ice);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-nav a:hover {
+    color: var(--ice);
+  }
 }
 
 @media (max-width: 40rem) {
@@ -314,7 +319,7 @@
   clip-path: inset(0 0 0 0);
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce), print {
   .js .reveal-ready {
     clip-path: none;
   }
@@ -620,7 +625,7 @@
 .cover .c-amber-fill { fill: var(--amber); }
 .cover text.c-on { fill: var(--frost); }
 .cover text.c-hot { fill: var(--amber); }
-.cover text.c-note { fill: var(--slate); font-size: 7px; }
+.cover text.c-note { fill: var(--steel); font-size: 8px; }
 .cover text.c-void { fill: var(--void); }
 
 .cover [data-grow] {

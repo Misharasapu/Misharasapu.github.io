@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Mishara Sapukotanage, AI/ML engineer: portfolio">
+  <meta property="og:image:alt" content="Mishara Sapukotanage: portfolio of computer vision, LLM and data science projects">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#07090c">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -126,8 +126,8 @@
           <h2 id="results">Results</h2>
           <div class="case-section__body">
             <div class="prose">
-              <p>Mixing real and synthetic images beat either source on its own in every phase. Synthetic-only training collapsed on real photos, calling almost every outdoor image a fire (specificity 0.090), because the synthetic sets are mostly or entirely fire-positive, so the model never learned what a normal scene looks like.</p>
-              <p>The outdoor-to-indoor test is where the mix helped most. The fine-tuned real-only model kept its precision indoors but its recall fell from 0.930 to 0.756, so it missed about a quarter of indoor fires, while the 50/50 model held recall at 0.796 and scored F1 0.878 against 0.852. Indoors, the 50/50 model trained on 2,000 real images edged out the real-only model trained on 4,000.</p>
+              <p>Mixing real and synthetic images beat synthetic-only training in every phase. Outdoors, the real-only models stayed ahead, but they used about five times as many real images. Synthetic-only training on the frozen model (Phase 1) collapsed on real photos, calling almost every outdoor image a fire (specificity 0.090), because the synthetic sets are mostly or entirely fire-positive, so the model never learned what a normal scene looks like.</p>
+              <p>The outdoor-to-indoor test is where the mix helped most. The fine-tuned real-only model kept its precision indoors but its recall fell from 0.930 to 0.756, so it missed about a quarter of indoor fires, while the 50/50 model held recall at 0.796 and scored F1 0.878 against 0.852. Indoors, the mix came out ahead: the 50/50 model trained on 2,000 real images edged out the real-only model trained on 4,000.</p>
             </div>
 
             <div class="table-scroll" tabindex="0" role="region" aria-labelledby="results-caption">

@@ -283,6 +283,11 @@
 
   // ---------- Play state ----------
   let elapsed = 0, last = 0, playing = false, visible = true, raf = 0;
+  let inView = true, tabVisible = !document.hidden;
+  const updateVisible = () => {
+    visible = inView && tabVisible;
+    if (visible) kick();
+  };
 
   const ICONS = {
     pause: '<svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 3h3v10H4zM9 3h3v10H9z"/></svg>',
@@ -342,6 +347,8 @@
 
   // ---------- Wire up ----------
   resize();
+  draw(0);
+  // Hide the no-JS poster only once a frame has drawn successfully
   frame.classList.add("is-live");
 
   // ?hero-t=<ms> freezes one moment of the timeline: used to check each
@@ -386,13 +393,13 @@
     // Pause rendering offscreen or in a hidden tab
     if ("IntersectionObserver" in window) {
       new IntersectionObserver((entries) => {
-        visible = entries[0].isIntersecting && !document.hidden;
-        if (visible) kick();
+        inView = entries[entries.length - 1].isIntersecting;
+        updateVisible();
       }).observe(frame);
     }
     document.addEventListener("visibilitychange", () => {
-      visible = !document.hidden;
-      if (visible) kick();
+      tabVisible = !document.hidden;
+      updateVisible();
     });
 
     // Points ease away from the cursor once the network has formed

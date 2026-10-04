@@ -123,8 +123,11 @@
 .stages li {
   padding-top: var(--s-3);
   border-top: 2px solid var(--gunmetal);
-  transition: border-color var(--dur-view) var(--ease-out),
-    opacity var(--dur-view) var(--ease-out);
+  transition: border-color var(--dur-view) var(--ease-out);
+}
+
+.stages p {
+  transition: color var(--dur-view) var(--ease-out);
 }
 
 .stages p {
@@ -133,13 +136,13 @@
   line-height: 1.45;
 }
 
-.stages.is-playing li {
-  opacity: 0.45;
+.stages.is-playing li p {
+  color: var(--steel);
 }
 
-.stages.is-playing li.is-active,
-.stages.is-playing li.is-done {
-  opacity: 1;
+.stages.is-playing li.is-active p,
+.stages.is-playing li.is-done p {
+  color: var(--frost);
 }
 
 .stages li.is-active {

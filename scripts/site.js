@@ -16,8 +16,11 @@
     (entries) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
-        entry.target.classList.add("is-revealed");
-        io.unobserve(entry.target);
+        const el = entry.target;
+        el.classList.add("is-revealed");
+        io.unobserve(el);
+        // Drop the clip once revealed, so focus rings outside the box show
+        el.addEventListener("transitionend", () => el.classList.remove("reveal-ready", "is-revealed"), { once: true });
       }
     },
     { rootMargin: "0px 0px -10% 0px" }
