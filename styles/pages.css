@@ -233,10 +233,18 @@
   }
 }
 
+.section__head--more {
+  margin-top: var(--s-8);
+  margin-bottom: var(--s-5);
+}
+
+.section__head--more h3 {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+}
+
 .more {
   display: grid;
   gap: var(--s-4);
-  margin-top: var(--s-7);
 }
 
 @media (min-width: 40rem) {
@@ -573,4 +581,10 @@
 
 .case__intro .figure {
   max-width: 54rem;
+}
+
+.case__intro .figure__frame img {
+  max-height: 30rem;
+  width: auto;
+  margin-inline: auto;
 }

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job application pipeline | Mishara Sapukotanage</title>
+  <meta name="description" content="An LLM pipeline that turns a job description into a fit assessment, a tailored one-page LaTeX CV and a logged application, with a self-correcting page-fit loop. Target: under eight minutes per application.">
+  <link rel="canonical" href="https://misharasapu.github.io/job-application-pipeline.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mishara Sapukotanage">
+  <meta property="og:title" content="Job application pipeline">
+  <meta property="og:description" content="Prompt chaining with one measured agentic loop: a tailored one-page CV that is checked against the compiled PDF.">
+  <meta property="og:url" content="https://misharasapu.github.io/job-application-pipeline.html">
+  <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mishara Sapukotanage: portfolio of computer vision, LLM and data science projects">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..700&amp;family=Instrument+Sans:wght@400..600&amp;family=Martian+Mono:wdth,wght@87.5,400..500&amp;display=swap">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">MS <span class="wordmark__full">Mishara Sapukotanage</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="assets/cv.pdf">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="case__head wrap">
+        <a class="back" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>All work</a>
+        <h1 class="case__title">Job application pipeline</h1>
+        <p class="case__outcome">A tool I built for my own job search that turns a pasted job description into a fit assessment, a tailored one-page LaTeX CV and a logged application, with a human decision at every step and one self-correcting loop that keeps the CV to exactly one page.</p>
+
+        <div class="case__intro">
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>Personal project, built as a working tool for my own applications</dd></div>
+            <div class="spec__row"><dt>My part</dt><dd>Sole developer</dd></div>
+            <div class="spec__row"><dt>Date</dt><dd>2026</dd></div>
+            <div class="spec__row"><dt>Stack</dt><dd>Python, Claude API (Sonnet and Haiku), LaTeX, pdfplumber, rapidfuzz, Google Sheets API, Adzuna API, macOS launchd</dd></div>
+            <div class="spec__row"><dt>Status</dt><dd>Working tool</dd></div>
+            <div class="spec__row spec__row--wide"><dt>Links</dt><dd><span class="private">Private code</span></dd></div>
+          </dl>
+
+          <div class="diagram">
+            <div class="diagram__lane" role="group" aria-labelledby="job-a">
+              <p class="label" id="job-a">Application pipeline, on demand</p>
+              <ol class="flow" aria-label="Application pipeline steps">
+                <li class="flow__step"><span class="label">01</span><b>Fit card</b><span>Claude Sonnet returns a structured fit verdict, score, strengths and gaps</span></li>
+                <li class="flow__step flow__step--human"><span class="label">02</span><b>I decide</b><span>Proceed or stop</span></li>
+                <li class="flow__step"><span class="label">03</span><b>Sponsor check</b><span>Fuzzy match against the UK sponsor register, confirmed by Claude Haiku</span></li>
+                <li class="flow__step"><span class="label">04</span><b>Tailored CV</b><span>LaTeX CV in a measured page-fit loop</span></li>
+                <li class="flow__step flow__step--out"><span class="label">05</span><b>Log</b><span>After I confirm, one row in the Google Sheets tracker</span></li>
+              </ol>
+            </div>
+            <div class="diagram__lane" role="group" aria-labelledby="job-b">
+              <p class="label" id="job-b">Sourcing agent, on laptop wake and login, no LLM calls</p>
+              <ol class="flow" aria-label="Sourcing agent steps">
+                <li class="flow__step"><span class="label">01</span><b>Fetch</b><span>New roles from the Adzuna API</span></li>
+                <li class="flow__step"><span class="label">02</span><b>Filter</b><span>Date, seniority, salary and roles already applied to</span></li>
+                <li class="flow__step"><span class="label">03</span><b>Label</b><span>Keyword archetype: computer vision, GenAI, ML engineer, data science</span></li>
+                <li class="flow__step flow__step--out"><span class="label">04</span><b>Digest</b><span>Daily file and a macOS notification</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="case__metrics">
+          <ul class="metrics" aria-label="Target and measured results">
+            <li class="metric metric--target">
+              <span class="metric__value">&lt; 8 min</span>
+              <span class="metric__name">per application</span>
+              <span class="metric__context">Not yet measured: most of the time is me reading the fit card and the generated CV</span>
+            </li>
+            <li class="metric">
+              <span class="metric__value">7.2 &rarr; 0.4</span>
+              <span class="metric__name">Lines of first-draft overflow</span>
+              <span class="metric__context">Mean, before and after a length budget measured from 100 accepted CVs; tested on 3 job descriptions</span>
+            </li>
+            <li class="metric">
+              <span class="metric__value">0.08 pts</span>
+              <span class="metric__name">Page-fill measurement error</span>
+              <span class="metric__context">Worst case against a pixel-rendering check across the archive; the old method read 1.34 points high on average</span>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <section class="case-section" aria-labelledby="problem">
+          <h2 id="problem">Problem</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Applying to technical roles is mostly mechanical work wrapped around a few judgement calls: read the description, decide whether it is worth applying, reframe your experience, rewrite a CV that still fits on one page, check whether the company can sponsor a visa and record the application. The judgement calls are small and the mechanical work is large, which is what makes it worth automating while keeping a person on the decisions.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="approach">
+          <h2 id="approach">Approach</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>The system is two independent halves that share only the Google Sheets tracker. The application pipeline runs when I find a role and chains five steps in a fixed order, and the sourcing agent runs in the background when the laptop wakes and brings a filtered digest of new roles.</p>
+              <p>I used two model tiers on purpose, because the tasks are different: Claude Sonnet for the fit card, the CV and the cover letter, where output quality is the whole point, and Claude Haiku for the sponsor check, which is just confirming which of up to twenty fuzzy-matched company names is the right one. The fit card's schema is enforced by the API's structured output, so a malformed response is stopped at the source instead of caught later.</p>
+              <p>It is a prompt-chaining pipeline with one agentic loop, and I describe it that way on purpose: the control flow is ordinary Python and I stay in the loop at every decision that matters, because a wrong autonomous decision here means a bad application sent under my name.</p>
+            </div>
+            <div class="decision">
+              <h3>Key decision: measure the PDF, not the model's opinion of it</h3>
+              <p>A model asked for a one-page CV routinely produces a page and a half or three quarters of a page. So the CV step compiles the PDF, counts the pages and measures how full page one is from the rendered glyph positions, then trims or expands in whichever direction is wrong, for at most three corrections, and keeps the best valid page seen so far so the loop can never finish on something worse than it already had.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="results">
+          <h2 id="results">Results</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Giving the first draft a length budget, measured from 100 accepted CVs and stated as point figures rather than ranges, cut the mean first-draft overflow from 7.2 lines to 0.4 across three test job descriptions, so most remaining misses need only one small trim. Replacing the old page-fill reader with a glyph-based one brought the worst-case error down to 0.08 points against an independent pixel-rendering check.</p>
+              <p>Prompt caching with a one-hour lifetime cut system-prompt input cost by roughly 58% over a four-application session. That figure was measured before I split the prompt into one file per agent, so it should be read as the pre-split number.</p>
+              <p>The target is under eight minutes per application, and I have not measured it yet, so it stays labelled as a target.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="limits">
+          <h2 id="limits">Limitations and next steps</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <ul>
+                <li>Time per application is a target, not a measurement. Timing a defined set of applications is the next thing to do.</li>
+                <li>Sourcing covers Adzuna only, and archetype labels and seniority filters are keyword-based, so an unusual job title can be mislabelled.</li>
+                <li>The sponsor check confirms that a company is on the register, not that it will sponsor this particular role, and the output says so.</li>
+                <li>The page-fill measure uses the top and bottom rendered lines, so it cannot tell a page whose last line is one word from a full one.</li>
+                <li>It only runs on macOS, because it relies on launchd, sleepwatcher and macOS notifications.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <nav class="next wrap" aria-label="Next project">
+        <a href="genai-insurance.html">
+          <span class="label">Next project</span>
+          <span class="next__title">GenAI insurance document extraction</span>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h2>Get in touch</h2>
+          <a class="contact-email" href="mailto:misharasapu@gmail.com">misharasapu@gmail.com</a>
+        </div>
+        <ul class="footer-links">
+          <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/mishara">LinkedIn</a></li>
+          <li><a class="btn btn--ghost" href="https://github.com/Misharasapu">GitHub</a></li>
+          <li><a class="btn btn--ghost" href="assets/cv.pdf">CV (PDF)</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__base">
+        <span>Mishara Sapukotanage</span>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

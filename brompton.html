@@ -1,73 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Computer Vision for Bike Wear Assessment, Brompton Bicycle</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="AI/ML Engineering Internship at Brompton Bicycle. Computer vision system for bike component wear assessment combining multi-class classification with confidence-calibrated decision logic." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brompton: tyre wear classification | Mishara Sapukotanage</title>
+  <meta name="description" content="AI/ML engineering internship at Brompton Bicycle: a computer vision prototype that classifies tyre wear as Good, Monitor or Replace, evaluated on how many unsafe tyres it catches.">
+  <link rel="canonical" href="https://misharasapu.github.io/brompton.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mishara Sapukotanage">
+  <meta property="og:title" content="Brompton: tyre wear classification">
+  <meta property="og:description" content="A computer vision prototype for tyre wear, built around catching unsafe tyres rather than headline accuracy.">
+  <meta property="og:url" content="https://misharasapu.github.io/brompton.html">
+  <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mishara Sapukotanage: portfolio of computer vision, LLM and data science projects">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..700&amp;family=Instrument+Sans:wght@400..600&amp;family=Martian+Mono:wdth,wght@87.5,400..500&amp;display=swap">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <script src="scripts/site.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Simple top bar with back link -->
-  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
-    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">MS <span class="wordmark__full">Mishara Sapukotanage</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="assets/cv.pdf">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="detail-page">
-    <!-- Title and quick actions -->
-    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
-      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
-        Computer Vision for Bike Wear Assessment
-      </h1>
-      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:850px; line-height:1.6;">
-        AI/ML Engineering Internship at Brompton Bicycle, London. I am building a computer vision system to assess bike component wear from images, intended for integration into Brompton's product ecosystem. The system combines image quality checks, multi-class wear classification, and confidence-calibrated decision logic to produce actionable, liability-aware maintenance recommendations.
-      </p>
-    </section>
+  <main id="main">
+    <article>
+      <header class="case__head wrap">
+        <a class="back" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>All work</a>
+        <h1 class="case__title">Brompton: tyre wear classification</h1>
+        <p class="case__outcome">A computer vision prototype that sorts a photo of a Brompton tyre into Good, Monitor or Replace, which I built over a 10-week internship by first growing the dataset and then rebuilding the evaluation around the tyres that actually need replacing.</p>
 
-    <!-- Hero visual -->
-    <section style="padding:0 20px 30px;">
-      <figure style="max-width:1000px; margin:0 auto;">
-        <img
-          class="thumb"
-          src="assets/brompton-cv.png"
-          alt="Computer vision system for bike component wear assessment at Brompton Bicycle"
-          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
-        />
-      </figure>
-    </section>
+        <div class="case__intro">
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>AI/ML engineering internship, Brompton Bicycle, London</dd></div>
+            <div class="spec__row"><dt>My part</dt><dd>Built the prototype: data collection and labelling, model training, evaluation and the demo app</dd></div>
+            <div class="spec__row"><dt>Dates</dt><dd>February to April 2026 (10 weeks)</dd></div>
+            <div class="spec__row"><dt>Stack</dt><dd>Python, PyTorch, Streamlit</dd></div>
+            <div class="spec__row"><dt>Status</dt><dd>Prototype, demoed for user testing</dd></div>
+            <div class="spec__row spec__row--wide"><dt>Links</dt><dd>Private code: this is company work, so it is described here rather than linked</dd></div>
+          </dl>
 
-    <!-- Content -->
-    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
+          <div class="diagram" role="group" aria-labelledby="bromp-flow">
+            <p class="label" id="bromp-flow">How the prototype works</p>
+              <ol class="flow" aria-label="Prototype pipeline from photo to advice">
+                <li class="flow__step"><span class="label">01</span><b>Photo</b><span>A rider uploads a photo of a tyre</span></li>
+                <li class="flow__step"><span class="label">02</span><b>Quality gate</b><span>Checks resolution, blur and brightness, or asks for a retake</span></li>
+                <li class="flow__step"><span class="label">03</span><b>Wear model</b><span>Good, Monitor or Replace</span></li>
+                <li class="flow__step"><span class="label">04</span><b>Tyre type model</b><span>Slick, Commuter Lite or Commuter Heavy</span></li>
+                <li class="flow__step flow__step--out"><span class="label">05</span><b>Advice</b><span>Next check or replacement, matched to how the rider rides</span></li>
+              </ol>
+            <p class="diagram__note">Diagram of the system. No Brompton images or results are shown on this page.</p>
+          </div>
+        </div>
 
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
-      <p style="color:#cccccc;">
-        Manual inspection of bike components is inconsistent and hard to scale. The goal was a vision-based system that could classify tyre wear into three actionable categories, Good, Monitor, or Replace, with high reliability on the safety-critical Replace class.
-      </p>
+        <div class="case__metrics">
+          <ul class="metrics" aria-label="Dataset and evaluation facts">
+            <li class="metric metric--fact">
+              <span class="metric__value">321 &rarr; 817</span>
+              <span class="metric__name">Tyre images</span>
+              <span class="metric__context">Labelled training images before and after five extra collection batches</span>
+            </li>
+            <li class="metric metric--fact">
+              <span class="metric__value">~6.5x</span>
+              <span class="metric__name">More unsafe examples</span>
+              <span class="metric__context">Replace-class images after targeted collection from the workshop and recycled tyres</span>
+            </li>
+            <li class="metric">
+              <span class="metric__value">1 in 8</span>
+              <span class="metric__name">Unsafe tyres caught by the first model</span>
+              <span class="metric__context">On the original test set, which is why accuracy stopped being the target</span>
+            </li>
+          </ul>
+          <p class="case__metrics-note">Later test results are internal to Brompton and are not published here.</p>
+        </div>
+      </header>
 
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
-      <ul class="bullets">
-        <li>Dataset acquisition was the highest-impact decision across the project. The training set grew from 321 to 817 images, with the Replace class expanding 6.5x through structured real-world data collection.</li>
-        <li>A second classifier was built to identify tyre type, Slick, Lite, or Heavy, enabling personalised service recommendations rather than generic outputs.</li>
-        <li>The evaluation framework was redesigned around Replace recall rather than overall accuracy after an initial model achieved 91% accuracy but caught only 1 in 8 unsafe tyres.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
-      <ul class="bullets">
-        <li>The final system uses a confidence-calibrated decision pipeline with tuned classification thresholds, designed to prioritise safety over headline accuracy.</li>
-        <li>The inference pipeline is modular, integrating image quality checks, multi-model inference, and recommendation logic, and is designed for extension to additional components and integration into app-based workflows.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
-      <p style="color:#cccccc;">
-        Python, computer vision, multi-class classification, confidence calibration, modular inference pipeline design.
-      </p>
-
-      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
-        <a class="btn btn-secondary" href="index.html">Back to home</a>
+      <div class="wrap">
+        <section class="case-section" aria-labelledby="problem">
+          <h2 id="problem">Problem</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Tyre wear is usually judged by eye, which is inconsistent and hard to scale, and a worn tyre is a safety problem rather than just a maintenance one. The aim was a prototype where a rider uploads a photo of their tyre and gets a clear Good, Monitor or Replace result, with advice on what to do next.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="approach">
+          <h2 id="approach">Approach</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>I scoped the work to tyres only, because tyre wear is visible in a photo, it matters for safety, and of the parts in the original data (front and rear tyres, chains and brake pads) tyres gave the clearest signal.</p>
+              <p>The first model trained on the original 321 labelled tyre images, where unsafe tyres were rare. So before more modelling I collected five more batches from staff bikes, the workshop and recycled tyres, which grew the set to 817 images with about 6.5 times as many unsafe examples, and I kept every photo of the same physical tyre in the same split so the model could never be tested on a tyre it had already seen.</p>
+              <p>A second model identifies the tyre type, so whether it is a Slick, a Commuter Lite or a Commuter Heavy, which lets the advice suggest a suitable tyre rather than a generic one. Before any prediction is shown, an image quality gate checks resolution, blur and brightness, and a low-confidence result asks the rider to retake the photo.</p>
+            </div>
+            <div class="decision">
+              <h3>Key decision: stop trusting accuracy</h3>
+              <p>The first model looked fine on accuracy, but it was catching only 1 in 8 unsafe tyres, because most tyres in the data were in good condition and the model had basically learned to call almost everything safe. So I made Replace recall the main metric, which means out of all the tyres that really needed replacing, how many the model caught, and every later choice of data, model and threshold was judged on that first.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="results">
+          <h2 id="results">Results</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Recall on unsafe tyres rose sharply once the new data was in, which made the data collection the most useful decision of the project. I ended up keeping two models on purpose: a safety-first model tuned to catch as many unsafe tyres as possible, kept as the internal reference, and a calmer model for user testing, because the safety-first one flagged so many tyres that it was not usable in a demo.</p>
+              <p>The prototype runs as a Streamlit app that takes the rider's riding priority, weekly mileage and rain exposure and turns the two model outputs into personalised advice, such as when to check the tyre again or which tyre type to switch to.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="limits">
+          <h2 id="limits">Limitations and next steps</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <ul>
+                <li>The model in the demo app is the user-testing one, so it is a prototype for feedback and not a production safety tool, and the low-confidence retake was switched off during user testing.</li>
+                <li>Labels follow mechanic judgement, and workshop tyres are often replaced for cuts or sidewall damage rather than tread wear, so the model is learning a mechanic's call and not a measured tread depth.</li>
+                <li>Only tyres have a model. Brake pads and chains were explored for feasibility but have no committed model yet.</li>
+                <li>The next test would be a fresh set of rider photos that played no part in development.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
+
+      <nav class="next wrap" aria-label="Next project">
+        <a href="fire-detection.html">
+          <span class="label">Next project</span>
+          <span class="next__title">Fire detection with synthetic data</span>
+        </a>
+      </nav>
+    </article>
   </main>
 
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h2>Get in touch</h2>
+          <a class="contact-email" href="mailto:misharasapu@gmail.com">misharasapu@gmail.com</a>
+        </div>
+        <ul class="footer-links">
+          <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/mishara">LinkedIn</a></li>
+          <li><a class="btn btn--ghost" href="https://github.com/Misharasapu">GitHub</a></li>
+          <li><a class="btn btn--ghost" href="assets/cv.pdf">CV (PDF)</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__base">
+        <span>Mishara Sapukotanage</span>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

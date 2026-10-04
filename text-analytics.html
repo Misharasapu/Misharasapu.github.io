@@ -1,84 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Text Analytics: Climate and Twitter NER — Project Details</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Climate sentiment classification, topic modelling with LDA, and Twitter NER. Naive Bayes baseline, BERT variants, and entity-level evaluation on BTC." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text analytics: climate sentiment and Twitter NER | Mishara Sapukotanage</title>
+  <meta name="description" content="MSc Data Science NLP project: climate sentiment classification, LDA topic modelling of climate disclosures and BERT named entity recognition on Twitter (77.9% entity-level F1).">
+  <link rel="canonical" href="https://misharasapu.github.io/text-analytics.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mishara Sapukotanage">
+  <meta property="og:title" content="Text analytics: climate sentiment and Twitter NER">
+  <meta property="og:description" content="Naive Bayes beat two neural models on climate sentiment; BERT reached 77.9% entity-level F1 on Twitter NER.">
+  <meta property="og:url" content="https://misharasapu.github.io/text-analytics.html">
+  <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mishara Sapukotanage: portfolio of computer vision, LLM and data science projects">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..700&amp;family=Instrument+Sans:wght@400..600&amp;family=Martian+Mono:wdth,wght@87.5,400..500&amp;display=swap">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <script src="scripts/site.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Simple top bar with back link -->
-  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
-    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">MS <span class="wordmark__full">Mishara Sapukotanage</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="assets/cv.pdf">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="detail-page">
-    <!-- Title and quick actions -->
-    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
-      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
-        Text Analytics: Climate and Twitter NER
-      </h1>
-      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:900px; line-height:1.6;">
-        End-to-end NLP coursework covering climate sentiment classification, topic modelling of risk and opportunity disclosures, and named entity recognition on Twitter.
-        The project compares classic baselines with transformer methods and reports entity-level metrics suitable for real extraction tasks.
-      </p>
-      <div class="card-actions" style="justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/misharasapu/text-analytics-climate-and-twitter-ner" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="assets/text-analytics-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+  <main id="main">
+    <article>
+      <header class="case__head wrap">
+        <a class="back" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>All work</a>
+        <h1 class="case__title">Text analytics: climate sentiment and Twitter NER</h1>
+        <p class="case__outcome">Three NLP tasks in one project, where the simplest model won climate sentiment, TF-IDF gave slightly more coherent topics, and a fine-tuned BERT reached 77.9% entity-level F1 on Twitter named entity recognition.</p>
+
+        <div class="case__intro">
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>MSc Data Science, University of Bristol (text analytics)</dd></div>
+            <div class="spec__row"><dt>Year</dt><dd>2025</dd></div>
+            <div class="spec__row"><dt>Stack</dt><dd>Python, scikit-learn, Hugging Face Transformers (bert-base-cased, BERT-tiny), LDA</dd></div>
+            <div class="spec__row"><dt>Status</dt><dd>Complete</dd></div>
+            <div class="spec__row spec__row--wide"><dt>Links</dt><dd><a href="https://github.com/Misharasapu/text-analytics-climate-and-twitter-ner">Code on GitHub</a> &middot; <a href="assets/text-analytics-report.pdf">Report (PDF)</a></dd></div>
+          </dl>
+
+            <figure class="figure">
+              <div class="figure__frame">
+                <img src="assets/figures/text-analytics/lda-topics.webp" width="1600" height="800" alt="Horizontal bar chart of the ten top words in one LDA topic, led by oil, divested, sands and companies.">
+              </div>
+              <figcaption><span class="label">LDA topic</span>Top words and their weights for one topic in the climate disclosures, from the TF-IDF model.</figcaption>
+            </figure>
+        </div>
+
+        <div class="case__metrics">
+          <ul class="metrics" aria-label="Results for the three tasks">
+            <li class="metric">
+              <span class="metric__value">79.0%</span>
+              <span class="metric__name">Naive Bayes accuracy</span>
+              <span class="metric__context">Validation set, 3-class climate sentiment. Neural net 52.5%, BERT-tiny 53.0%</span>
+            </li>
+            <li class="metric">
+              <span class="metric__value">0.4445</span>
+              <span class="metric__name">Topic coherence (c_v)</span>
+              <span class="metric__context">TF-IDF LDA, against 0.4347 for raw counts</span>
+            </li>
+            <li class="metric">
+              <span class="metric__value">77.9%</span>
+              <span class="metric__name">Entity-level F1</span>
+              <span class="metric__context">Twitter NER on the Broad Twitter Corpus test split, strict span matching</span>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <section class="case-section" aria-labelledby="problem">
+          <h2 id="problem">Problem</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Climate disclosures and social media posts are full of useful information that is hard to pull out: whether a passage describes a climate risk or an opportunity, what themes run through a set of disclosures, and which people, places and organisations a tweet mentions.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="approach">
+          <h2 id="approach">Approach</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>For climate sentiment (risk, neutral or opportunity) I compared Naive Bayes on unigram and bigram counts, a small feedforward neural network and a fine-tuned BERT-tiny trained on 800 examples. For topics I ran LDA on the risk disclosures with raw counts and with TF-IDF weighting. For Twitter NER I fine-tuned bert-base-cased for BIO token tagging on the Broad Twitter Corpus, keeping case because capitals are a strong hint for names.</p>
+            </div>
+            <div class="decision">
+              <h3>Key decision: score NER on whole entities, not tokens</h3>
+              <p>Token accuracy flatters a tagger, because most tokens are outside any entity. I scored with strict span matching, which basically means an entity only counts as correct if every token in it has the right label, so a half-found organisation name is a miss.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="results">
+          <h2 id="results">Results</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Naive Bayes won climate sentiment at 79.0% validation accuracy, well ahead of the neural network and BERT-tiny, which shows how far sparse features and careful preprocessing go when there is little data. TF-IDF gave slightly more coherent topics than raw counts. On Twitter NER, people were much easier to find than organisations.</p>
+            </div>
+            <div class="table-scroll" tabindex="0" role="region" aria-labelledby="ner-results">
+              <table class="data-table">
+                <caption id="ner-results">Entity-level results on the Broad Twitter Corpus test split (report table 5). Token-level F1 was 77.03%.</caption>
+                <thead>
+                  <tr><th scope="col">Entity</th><th scope="col">Precision</th><th scope="col">Recall</th><th scope="col">F1</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Person</th><td>89.0</td><td>88.4</td><td>88.7</td></tr>
+                  <tr><th scope="row">Location</th><td>72.2</td><td>62.6</td><td>67.1</td></tr>
+                  <tr><th scope="row">Organisation</th><td>58.0</td><td>56.9</td><td>57.4</td></tr>
+                  <tr class="is-key"><th scope="row">Overall</th><td>79.0</td><td>76.8</td><td>77.9</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="limits">
+          <h2 id="limits">Limitations and next steps</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <ul>
+                <li>The sentiment comparison uses validation accuracy rather than a separate test set.</li>
+                <li>BERT-tiny had only 800 training examples, so its weak result says more about the data size than about transformers.</li>
+                <li>Organisations were the weakest entity type and span boundary errors were a recurring problem, which is where more data or a larger model would help most.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
 
-    <!-- Hero visual (LDA) -->
-    <section style="padding:0 20px 30px;">
-      <figure style="max-width:1000px; margin:0 auto;">
-        <img
-          class="thumb"
-          src="assets/text-analytics-lda.png"
-          alt="LDA topic bar chart illustrating top terms for climate-related disclosures"
-          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
-        />
-        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
-          LDA topic visual for climate disclosures. TF-IDF input produced clearer, more coherent topics on this small corpus.
-        </figcaption>
-      </figure>
-    </section>
-
-    <!-- Content -->
-    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
-      <p style="color:#cccccc;">
-        Extract actionable information from climate disclosures and noisy social text. Build quick yet reliable classifiers for sentiment, surface themes with topic modelling, and evaluate named entity recognition with strict span-level metrics.
-      </p>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
-      <ul class="bullets">
-        <li>Climate sentiment: compared Naive Bayes, a small neural net, and a compact transformer on ClimateBERT samples, tuning n-grams and minimum document frequency for best balance.</li>
-        <li>Topic modelling: used LDA on risk and opportunity subsets with Count and TF-IDF vectorisation, measuring coherence and interpretability.</li>
-        <li>Twitter NER: fine-tuned <code>bert-base-cased</code> for BIO tagging on the BTC dataset, reporting precision, recall, and F1 at the entity level.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
-      <ul class="bullets">
-        <li><strong>Climate sentiment:</strong> Naive Bayes reached <strong>79.0% accuracy</strong>, outperforming the neural and transformer baselines on this low-resource setup.</li>
-        <li><strong>LDA topics:</strong> TF-IDF input achieved higher coherence (<strong>0.4445</strong>) than Count (<strong>0.4347</strong>), producing sharper, domain-specific topics.</li>
-        <li><strong>Twitter NER:</strong> Overall entity-level F1 <strong>77.9%</strong>, with PER <strong>88.7%</strong>, LOC <strong>67.1%</strong>, ORG <strong>57.4%</strong>; token-level F1 <strong>77.03%</strong>.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
-      <p style="color:#cccccc;">
-        Python, pandas, scikit-learn, matplotlib, transformers (Hugging Face). LDA topic modelling and reproducible Jupyter notebooks with fixed seeds.
-      </p>
-
-      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/misharasapu/text-analytics-climate-and-twitter-ner" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="assets/text-analytics-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
-        <a class="btn btn-secondary" href="index.html">Back to home</a>
-      </div>
-    </section>
+      <nav class="next wrap" aria-label="Next project">
+        <a href="word-clustering.html">
+          <span class="label">Next project</span>
+          <span class="next__title">Word clustering and nonlinear classification</span>
+        </a>
+      </nav>
+    </article>
   </main>
 
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h2>Get in touch</h2>
+          <a class="contact-email" href="mailto:misharasapu@gmail.com">misharasapu@gmail.com</a>
+        </div>
+        <ul class="footer-links">
+          <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/mishara">LinkedIn</a></li>
+          <li><a class="btn btn--ghost" href="https://github.com/Misharasapu">GitHub</a></li>
+          <li><a class="btn btn--ghost" href="assets/cv.pdf">CV (PDF)</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__base">
+        <span>Mishara Sapukotanage</span>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
