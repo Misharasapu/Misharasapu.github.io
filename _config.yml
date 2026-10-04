@@ -1,0 +1,7 @@
+# GitHub Pages (Jekyll) settings. Only used to stop agent docs being published as pages.
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - ARCHITECTURE.md
+  - skills-lock.json
+  - planning
