@@ -1,249 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mishara Sapukotanage | Data Science Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <!-- SEO: description + canonical -->
-    <meta name="description" content="Portfolio of Mishara Sapukotanage (MSc Data Science, University of Bristol). Projects in computer vision, NLP, visual analytics, reinforcement learning, and Python OOP + finance EDA.">
-    <link rel="canonical" href="https://misharasapu.github.io">
-
-
-    <!-- Open Graph (LinkedIn/FB/Slack previews) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Mishara Sapukotanage | Data Science Portfolio">
-    <meta property="og:description" content="Selected ML/AI projects: computer vision, NLP, visual analytics, reinforcement learning, and Python OOP + finance EDA.">
-    <meta property="og:url" content="https://misharasapu.github.io">
-    <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
-
-    <!-- Twitter (X) card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mishara Sapukotanage | Data Science Portfolio">
-    <meta name="twitter:description" content="Selected ML/AI projects: computer vision, NLP, visual analytics, reinforcement learning, and Python OOP + finance EDA.">
-    <meta name="twitter:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mishara Sapukotanage | AI/ML engineer</title>
+  <meta name="description" content="Portfolio of Mishara Sapukotanage: computer vision, LLM pipelines and data science. MSc Data Science (Distinction) and BEng Mechanical Engineering, University of Bristol.">
+  <link rel="canonical" href="https://misharasapu.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mishara Sapukotanage">
+  <meta property="og:title" content="Mishara Sapukotanage | AI/ML engineer">
+  <meta property="og:description" content="Computer vision, LLM pipelines and data science, with the evidence behind each project.">
+  <meta property="og:url" content="https://misharasapu.github.io/">
+  <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mishara Sapukotanage, AI/ML engineer: portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..700&amp;family=Instrument+Sans:wght@400..600&amp;family=Martian+Mono:wdth,wght@87.5,400..500&amp;display=swap">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <script src="scripts/site.js" defer></script>
+  <script src="scripts/hero.js" defer></script>
+  <script src="scripts/covers.js" defer></script>
 </head>
 <body>
-  <header>
-    <span class="hero-tag">AI/ML Engineer</span>
-    <h1>Mishara Sapukotanage</h1>
-    <p class="tagline">Data Science & AI Portfolio</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html" aria-current="page">MS <span class="wordmark__full">Mishara Sapukotanage</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="assets/cv.pdf">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am an AI/ML engineer with a background in mechanical engineering and data science, currently
-    building computer vision systems for physical products. I completed an MSc in Data Science at
-    the University of Bristol with Distinction, building on a BEng in Mechanical Engineering from
-    the same institution. My engineering background gives me an intuition for physical systems that
-    I bring into applied AI work, from wear modelling to safety-critical decision pipelines. I focus
-    on building machine learning solutions that are explainable, grounded in real operational
-    constraints, and useful to the people who rely on them.
-  </p>
-</section>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-name">
+      <div class="wrap">
+        <div class="hero__text">
+          <h1 class="hero__name" id="hero-name" data-decode><span>Mishara</span><span>Sapukotanage</span></h1>
+          <p class="hero__role">AI/ML engineer building computer vision and practical AI systems.</p>
+          <p class="hero__proof"><strong>MSc Data Science with Distinction</strong> and BEng Mechanical Engineering, University of Bristol, then a computer vision internship at <strong>Brompton Bicycle</strong> in 2026.</p>
+          <div class="actions">
+            <a class="btn" href="#work">See the work</a>
+            <a class="btn btn--ghost" href="assets/cv.pdf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 2v8m-3.5-3.5L8 10l3.5-3.5M3 13h10"/></svg>Download CV</a>
+            <a class="btn btn--ghost" href="#contact">Contact</a>
+          </div>
+        </div>
 
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="project-grid">
-    <!-- 0. Brompton Bicycle -->
-    <article class="project-card">
-      <div class="thumb-frame">
-        <img class="thumb" src="assets/brompton-cv.png" alt="Computer vision system for bike component wear assessment at Brompton Bicycle">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">
-          <a href="brompton.html" target="_blank" rel="noopener">
-            Computer Vision for Bike Wear Assessment
-          </a>
-        </h3>
-        <p class="card-text">
-          Building a safety-focused computer vision system for bike component wear assessment at Brompton Bicycle, combining multi-class classification with confidence-calibrated decision logic.
-        </p>
-        <div class="card-actions">
-          <a class="btn btn-secondary" href="brompton.html">Read more</a>
+        <div class="hero__visual">
+          <div class="stage-frame" data-hero>
+            <img src="assets/hero-poster.webp" width="1000" height="800" alt="">
+            <canvas aria-hidden="true"></canvas>
+          </div>
+          <ol class="stages" data-stages>
+            <li><span class="label">01 Engineering</span><p>I trained as a mechanical engineer.</p></li>
+            <li><span class="label">02 Data</span><p>Then learned to find the signal in data.</p></li>
+            <li><span class="label">03 AI / ML</span><p>Now I build AI systems.</p></li>
+          </ol>
+          <div class="hero__controls">
+            <button class="text-btn" type="button" data-hero-toggle hidden></button>
+          </div>
         </div>
       </div>
-    </article>
+    </section>
 
-    <!-- 1. Fire Detection -->
-    <article class="project-card">
-      <div class="thumb-frame">
-        <img class="thumb" src="assets/fire-detection.png" alt="Stylized flame icon representing AI-based fire detection">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">
-          <a href="fire-detection.html" target="_blank" rel="noopener">
-            Fire Detection Using Synthetic Data
-          </a>
-        </h3>
-        <p class="card-text">
-          Developed an AI system that detects industrial fires early using a blend of synthetic and real images. 
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="https://github.com/misharasapu/fire-detection-dissertation" target="_blank" rel="noopener">View repo</a>
-          <a class="btn btn-secondary" href="fire-detection.html">Read more</a>
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="work-title">Selected work</h2>
+          <p>Four projects with the most evidence behind them, each with what I measured and what I would do next.</p>
+        </div>
+
+        <div class="featured">
+          <article class="card" data-cover>
+            <div class="card__cover">
+              <svg class="cover" viewBox="0 0 320 200" aria-hidden="true" focusable="false">
+                <g class="c-grid">
+                  <path d="M20 100h144M92 28v144"/>
+                </g>
+                <circle class="c-ink" cx="92" cy="100" r="64"/>
+                <circle class="c-ink tyre-tread" cx="92" cy="100" r="59" stroke-dasharray="5 4"/>
+                <circle class="c-dim" cx="92" cy="100" r="44"/>
+                <circle class="c-ink" cx="92" cy="100" r="5"/>
+                <path class="c-dim" d="M92 56v39M92 105v39M48 100h39M97 100h39M61 69l27 27M96 104l27 27M123 69l-27 27M88 104l-27 27"/>
+                <line class="c-ink tyre-scan" x1="20" y1="100" x2="164" y2="100"/>
+                <text x="182" y="62">Good</text>
+                <rect class="c-fill-dim" x="182" y="68" width="112" height="6"/>
+                <rect class="c-fill tyre-bar tyre-bar--1" data-grow x="182" y="68" width="26" height="6"/>
+                <text x="182" y="94">Monitor</text>
+                <rect class="c-fill-dim" x="182" y="100" width="112" height="6"/>
+                <rect class="c-fill tyre-bar tyre-bar--2" data-grow x="182" y="100" width="46" height="6"/>
+                <text class="c-hot tyre-verdict" x="182" y="126">Replace</text>
+                <rect class="c-fill-dim" x="182" y="132" width="112" height="6"/>
+                <rect class="c-amber-fill tyre-bar tyre-bar--3" data-grow x="182" y="132" width="94" height="6"/>
+                <line class="c-amber tyre-threshold" data-drop x1="256" y1="50" x2="256" y2="146" stroke-dasharray="3 3"/>
+                <text class="c-note" x="182" y="176">Illustrative only</text>
+              </svg>
+            </div>
+            <div class="card__body">
+              <ul class="tags label"><li>Industry</li><li>Computer vision</li><li>2026</li></ul>
+              <h3 class="card__title"><a href="brompton.html">Brompton: tyre wear classification</a></h3>
+              <p class="card__text">A computer vision prototype that sorts a photo of a tyre into Good, Monitor or Replace, built around catching unsafe tyres rather than chasing headline accuracy.</p>
+              <p class="card__proof">321 &rarr; 817 <span>tyre images, with about 6.5x more unsafe examples</span></p>
+              <p class="card__meta label">Private code</p>
+            </div>
+            <span class="brackets" aria-hidden="true"><i></i></span>
+          </article>
         </div>
       </div>
-    </article>
+    </section>
+  </main>
 
-    <!-- 2. Graduate Employment Visual Analytics -->
-    <article class="project-card">
-      <div class="thumb-frame">
-        <img class="thumb" src="assets/graduate-employment.png" alt="Stylized UK map in teal and blue tones representing graduate employment visual analytics">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">
-          <a href="graduate-employment.html" target="_blank" rel="noopener">
-            Graduate Employment Visual Analytics
-          </a>
-        </h3>
-        <p class="card-text">
-          Analysed graduate employment trends across England and Wales using census data and interactive Tableau dashboards.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="https://github.com/misharasapu/graduate-employment-visual-analytics" target="_blank" rel="noopener">View repo</a>
-          <a class="btn btn-secondary" href="graduate-employment.html">Read more</a>
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h2>Get in touch</h2>
+          <a class="contact-email" href="mailto:misharasapu@gmail.com">misharasapu@gmail.com</a>
         </div>
+        <ul class="footer-links">
+          <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/mishara">LinkedIn</a></li>
+          <li><a class="btn btn--ghost" href="https://github.com/Misharasapu">GitHub</a></li>
+          <li><a class="btn btn--ghost" href="assets/cv.pdf">CV (PDF)</a></li>
+        </ul>
       </div>
-    </article>
-
-    <!-- 3. Text Analytics -->
-    <article class="project-card">
-      <div class="thumb-frame">
-        <img class="thumb thumb--cover" src="assets/text-analytics.png"
-     alt="Abstract message bubbles and neural lines representing text analytics and Twitter NER">
+      <div class="site-footer__base">
+        <span>Mishara Sapukotanage</span>
+        <a href="#main">Back to top</a>
       </div>
-      <div class="card-body">
-        <h3 class="card-title">
-          <a href="text-analytics.html" target="_blank" rel="noopener">
-            Text Analytics: Climate and Twitter NER
-          </a>
-        </h3>
-        <p class="card-text">
-          Built NLP models to analyse climate sentiment and extract key insights from corporate and Twitter data.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="https://github.com/misharasapu/text-analytics-climate-and-twitter-ner" target="_blank" rel="noopener">View repo</a>
-          <a class="btn btn-secondary" href="text-analytics.html">Read more</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 4. AI Project -->
-    <article class="project-card">
-      <div class="thumb-frame">
-        <img class="thumb thumb--cover" src="assets/ai-project.png"
-     alt="Glowing neural network symbol representing artificial intelligence and machine learning">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">
-          <a href="word-clustering.html" target="_blank" rel="noopener">
-            Word Clustering and Nonlinear Classification
-          </a>
-        </h3>
-        <p class="card-text">
-          Explored how machines learn meaning and patterns through word clustering and non-linear classification experiments.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="https://github.com/misharasapu/ai-word-clustering-and-nonlinear-classification" target="_blank" rel="noopener">View repo</a>
-          <a class="btn btn-secondary" href="word-clustering.html">Read more</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 5. Gas Network Resilience -->
-    <article class="project-card">
-      <div class="thumb-frame">
-        <img class="thumb" src="assets/gas-rl.png" alt="Stylized glowing gas pipeline network symbolizing reinforcement learning optimization">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">
-          <a href="gas-network-rl.html" target="_blank" rel="noopener">
-            Gas Network Resilience with Reinforcement Learning
-          </a>
-        </h3>
-        <p class="card-text">
-          Built a Python simulation using Q-learning to improve gas network resilience during cold weather demand spikes.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="https://github.com/Misharasapu/gas-network-resilience-rl" target="_blank" rel="noopener">View repo</a>
-          <a class="btn btn-secondary" href="gas-network-rl.html">Read more</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 6. OOP + Finance -->
-    <article class="project-card">
-      <div class="thumb-frame">
-        <img class="thumb" src="assets/oop-finance.png" alt="Glowing Python symbol with data graphs representing simulation and analytics">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">
-          <a href="oop-hatchery-finance.html" target="_blank" rel="noopener">
-            Modelling Systems & Markets in Python
-          </a>
-        </h3>
-        <p class="card-text">
-          Built a Python simulation of a fish hatchery and explored stock vs crypto performance through financial analysis.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="https://github.com/Misharasapu/oop-hatchery-simulation-and-finance-eda" target="_blank" rel="noopener">View repo</a>
-          <a class="btn btn-secondary" href="oop-hatchery-finance.html">Read more</a>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-  <!-- ---------- CONTACT SECTION ---------- -->
-  <footer id="contact">
-    <h2>Get in Touch</h2>
-    <p class="contact-intro">
-      Thanks for visiting my portfolio! You can connect with me or view my work through the links below.
-    </p>
-
-    <div class="contact-links">
-      <a href="https://github.com/Misharasapu" target="_blank" rel="noopener" class="contact-item">GitHub</a>
-      <a href="https://www.linkedin.com/in/mishara" target="_blank" rel="noopener" class="contact-item">LinkedIn</a>
-      <a href="https://mail.google.com/mail/?view=cm&to=misharasapu@gmail.com" target="_blank" rel="noopener" class="contact-item">Email</a>
     </div>
-
-    <p class="copyright">
-      © <span id="year"></span> Mishara Sapukotanage. All rights reserved.
-    </p>
   </footer>
-
-  <!-- Year auto update -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <script>
-  const cards = document.querySelectorAll('.project-card');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  cards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(card);
-  });
-</script>
-
 </body>
 </html>
