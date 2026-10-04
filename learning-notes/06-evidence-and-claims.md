@@ -27,7 +27,7 @@ live site (your words)      NC needs confirmation  --->  safest true wording, or
 
 | Old or draft claim | What the source said | What the site says now |
 | --- | --- | --- |
-| Brompton early model "91% accuracy" | Notebook: 0.876 | No number; "a model calling every tyre safe would have scored at least as well" |
+| Brompton early model accuracy figure | Not traceable to a model output in the notes | No number; the story is told qualitatively, and Brompton dataset sizes are withheld for confidentiality |
 | Brompton "final system prioritises safety" | Demo model is "not a production safety tool" | Two models described honestly |
 | Fire "mix beat either source in every phase" (my own error) | Real-only led outdoors with about 5x the real images | Corrected |
 | GenAI documents "700 to 1,000 words" (README) | `wc -w`: 714 to 1,896 | Corrected |
@@ -39,7 +39,7 @@ live site (your words)      NC needs confirmation  --->  safest true wording, or
 1. **A metric needs its context:** what it was measured on, the test-set size, and whether it is validation or test.
 2. **A target is not a measurement:** "under 8 minutes" stays labelled "Target".
 3. **Check the source, not the summary:** the GenAI README was wrong about its own data.
-4. **Count before claiming:** "321 to 817" was the whole dataset, not the training set.
+4. **Count before claiming:** a Brompton dataset size first written as "the training set" was really the whole dataset before splitting.
 5. **Honest limitations read as judgement:** recruiters trust the Fire page more *because* it shows the model's misses (Fig 4.16).
 
 ## In industry
