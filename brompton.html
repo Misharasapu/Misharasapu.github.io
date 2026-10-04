@@ -47,9 +47,9 @@
 
       <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
       <ul class="bullets">
-        <li>Dataset acquisition was the highest-impact decision across the project. The training set grew from 321 to 817 images, with the Replace class expanding 6.5x through structured real-world data collection.</li>
+        <li>Dataset acquisition was the highest-impact decision across the project. Structured real-world data collection, aimed at unsafe tyres in particular, gave a ~2.5x larger tyre dataset.</li>
         <li>A second classifier was built to identify tyre type, Slick, Lite, or Heavy, enabling personalised service recommendations rather than generic outputs.</li>
-        <li>The evaluation framework was redesigned around Replace recall rather than overall accuracy after an initial model achieved 91% accuracy but caught only 1 in 8 unsafe tyres.</li>
+        <li>The first run looked strong on headline accuracy but, on limited data, missed too many unsafe tyres, so the data was expanded and the evaluation framework was redesigned around Replace recall rather than overall accuracy.</li>
       </ul>
 
       <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
