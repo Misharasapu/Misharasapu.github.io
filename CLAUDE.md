@@ -18,7 +18,8 @@ Where this file and the user-level ~/.claude/CLAUDE.md conflict, this file wins.
 
 ## MCP servers
 
-- `chrome-devtools`: screenshots, device emulation, Lighthouse, performance traces. If it reports the browser is already running, another session holds it; fall back to headless Chrome:
+- `playwright` (plugin, installed Oct 2026): default for everyday checks. Screenshots, 375px/768px/1440px resizing, console errors, network requests, `prefers-reduced-motion` emulation, and page scripts (overflow, missing `alt`, rough load timings). Playwright is the industry-standard browser testing tool, so prefer it. It can only write inside the repo; screenshots land in `.playwright-mcp/` (gitignored). Start `python3 -m http.server 8000` first and stop it afterwards. Verified on the home page only so far.
+- `chrome-devtools`: keep for what Playwright cannot do: Lighthouse audits and performance traces. Also screenshots and device emulation if Playwright is unavailable. If it reports the browser is already running, another session holds it; fall back to headless Chrome:
   `"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars --user-data-dir=<scratchpad>/chr --window-size=1440,2400 --screenshot=<scratchpad>/shot.png http://localhost:8000`
   Run it in the background and kill it after the file appears; it can hang otherwise.
 - `context7`: current docs for GSAP, MDN APIs (View Transitions, Canvas, IntersectionObserver). Prefer it over memory for API details.
