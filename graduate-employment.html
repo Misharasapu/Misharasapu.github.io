@@ -1,84 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Graduate Employment Visual Analytics — Project Details</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Graduate employment disparities across England and Wales, 2011 to 2021. Harmonised census data, Tableau visual analytics, PCA clustering, and Bayesian Ridge forecasting to 2030." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graduate employment visual analytics | Mishara Sapukotanage</title>
+  <meta name="description" content="MSc Data Science project: 2011 and 2021 census data harmonised to 292 local authority districts, two Tableau stories, PCA clustering and a Bayesian Ridge forecast for 2030.">
+  <link rel="canonical" href="https://misharasapu.github.io/graduate-employment.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mishara Sapukotanage">
+  <meta property="og:title" content="Graduate employment visual analytics">
+  <meta property="og:description" content="292 districts, two censuses and two Tableau stories on where graduate employment rose and fell.">
+  <meta property="og:url" content="https://misharasapu.github.io/graduate-employment.html">
+  <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mishara Sapukotanage: portfolio of computer vision, LLM and data science projects">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..700&amp;family=Instrument+Sans:wght@400..600&amp;family=Martian+Mono:wdth,wght@87.5,400..500&amp;display=swap">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <script src="scripts/site.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Simple top bar with back link -->
-  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
-    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">MS <span class="wordmark__full">Mishara Sapukotanage</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="detail-page">
-    <!-- Title and quick actions -->
-    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
-      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
-        Graduate Employment Visual Analytics
-      </h1>
-      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:900px; line-height:1.6;">
-        Regional analysis of graduate employment across England and Wales using harmonised census data for 2011 and 2021.
-        Tableau storytelling highlights spatial patterns and change over time. Python analytics uses PCA and Bayesian Ridge to forecast 2030 outcomes.
-      </p>
-      <div class="card-actions" style="justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/misharasapu/graduate-employment-visual-analytics" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="assets/graduate-employment-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+  <main id="main">
+    <article>
+      <header class="case__head wrap">
+        <a class="back" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>All work</a>
+        <h1 class="case__title">Graduate employment visual analytics</h1>
+        <p class="case__outcome">Census data from 2011 and 2021, harmonised to 292 local authority districts in England and Wales, turned into two Tableau stories that show where graduate employment rose, where it fell and what it might look like in 2030.</p>
+
+        <div class="case__intro">
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>MSc Data Science, University of Bristol (visual analytics)</dd></div>
+            <div class="spec__row"><dt>Year</dt><dd>2025</dd></div>
+            <div class="spec__row"><dt>Stack</dt><dd>Tableau, Python, pandas, scikit-learn (PCA, K-Means, Bayesian Ridge), UMAP</dd></div>
+            <div class="spec__row"><dt>Status</dt><dd>Complete</dd></div>
+            <div class="spec__row spec__row--wide"><dt>Links</dt><dd><a href="https://github.com/Misharasapu/graduate-employment-visual-analytics">Code on GitHub</a> &middot; <a href="assets/graduate-employment-report.pdf">Report (PDF)</a></dd></div>
+          </dl>
+
+            <figure class="figure">
+              <div class="figure__frame">
+                <img src="assets/figures/graduate-employment/change-map.webp" width="1600" height="875" alt="Choropleth map of England and Wales by local authority district, coloured from red (graduate employment fell) to green (it rose) between 2011 and 2021.">
+              </div>
+              <figcaption><span class="label">Tableau map</span>Change in graduate employment between 2011 and 2021 by local authority district: green rose and red fell.</figcaption>
+            </figure>
+        </div>
+
+        <div class="case__metrics">
+          <ul class="metrics" aria-label="Project scope">
+            <li class="metric metric--fact">
+              <span class="metric__value">292</span>
+              <span class="metric__name">Local authority districts</span>
+              <span class="metric__context">2011 and 2021 census data harmonised to 2021 boundaries</span>
+            </li>
+            <li class="metric metric--fact">
+              <span class="metric__value">23</span>
+              <span class="metric__name">Indicators reduced with PCA</span>
+              <span class="metric__context">Graduate-related and industry variables, clustered with K-Means</span>
+            </li>
+            <li class="metric metric--fact">
+              <span class="metric__value">2030</span>
+              <span class="metric__name">Forecast year</span>
+              <span class="metric__context">Bayesian Ridge forecast with 95% credible intervals</span>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <section class="case-section" aria-labelledby="problem">
+          <h2 id="problem">Problem</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Graduate employment varies a lot between regions, and policymakers, universities and graduates need to see where it is improving, where it is lagging and which local factors go with it. The census gives the data, but it changes shape between 2011 and 2021, so it cannot be compared directly.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="approach">
+          <h2 id="approach">Approach</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>I cleaned the 2011 and 2021 census tables on qualifications, employment and industry, merged them at local authority district level and built two Tableau stories around tasks from Munzner's visualisation taxonomy, such as comparing, ranking, clustering and forecasting. The first story describes levels and the second covers change over time, structural similarity and a 2030 forecast.</p>
+              <p>For structure, PCA reduced 23 graduate and industry indicators to two dimensions, with K-Means colouring the clusters, and a Bayesian Ridge regression forecast graduate employment in 2030 with 95% credible intervals.</p>
+            </div>
+            <div class="decision">
+              <h3>Key decision: harmonise to one set of boundaries before comparing anything</h3>
+              <p>District boundaries changed between the two censuses, so I mapped the 2011 records onto the 2021 districts first, which gave 292 districts that mean the same place in both years. Without that, a change on the map could just be a boundary change.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="results">
+          <h2 id="results">Results</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>In a class review session, participants could read regional performance, change over time and outliers from the stories, and the choropleths made the lower performance of rural and coastal areas easy to spot. Tableau cannot draw uncertainty bars on the forecast chart natively, so the 95% credible intervals sit in the tooltips.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="limits">
+          <h2 id="limits">Limitations and next steps</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <ul>
+                <li>The evaluation was a class review session rather than a structured user study.</li>
+                <li>Putting the forecast intervals in tooltips keeps them available but makes them easy to miss, so a chart type that shows uncertainty directly would be better.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
 
-    <!-- Hero visual -->
-    <section style="padding:0 20px 30px;">
-      <figure style="max-width:1000px; margin:0 auto;">
-        <img
-          class="thumb"
-          src="assets/graduate-employment-map.png"
-          alt="Choropleth map showing percentage point change in graduate employment between 2011 and 2021 across England and Wales"
-          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
-        />
-        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
-          Percentage point change in graduate employment from 2011 to 2021 by local authority. Green increased. Red decreased.
-        </figcaption>
-      </figure>
-    </section>
-
-    <!-- Content -->
-    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
-      <p style="color:#cccccc;">
-        Graduate outcomes vary widely by region. Policymakers and universities need a clear view of where employment is improving, where it is lagging, and how the structure of local economies relates to future prospects.
-      </p>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
-      <ul class="bullets">
-        <li>Harmonised 2011 and 2021 census variables to 292 local authority districts on 2021 boundaries.</li>
-        <li>Tableau stories with choropleths, ranked bars, and diverging bars to communicate level and change.</li>
-        <li>PCA on normalised indicators to reveal structural similarity. Bayesian Ridge used to forecast graduate employment to 2030 with uncertainty bands.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
-      <ul class="bullets">
-        <li>Clear urban advantage and persistent coastal and rural pockets of lower graduate employment growth.</li>
-        <li>PCA separated regions into coherent clusters that align with industry mix and higher education density.</li>
-        <li>Bayesian Ridge produced stable 2030 forecasts and credible intervals suitable for planning and scenario discussion.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
-      <p style="color:#cccccc;">
-        Tableau, Python, pandas, scikit-learn (PCA, BayesianRidge), matplotlib. Clean data joins and reproducible preprocessing in notebooks.
-      </p>
-
-      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/misharasapu/graduate-employment-visual-analytics" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="assets/graduate-employment-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
-        <a class="btn btn-secondary" href="index.html">Back to home</a>
-      </div>
-    </section>
+      <nav class="next wrap" aria-label="Next project">
+        <a href="hostel-website.html">
+          <span class="label">Next project</span>
+          <span class="next__title">Wildcat Hostel website</span>
+        </a>
+      </nav>
+    </article>
   </main>
 
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h2>Get in touch</h2>
+          <a class="contact-email" href="mailto:misharasapu@gmail.com">misharasapu@gmail.com</a>
+        </div>
+        <ul class="footer-links">
+          <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/mishara">LinkedIn</a></li>
+          <li><a class="btn btn--ghost" href="https://github.com/Misharasapu">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__base">
+        <span>Mishara Sapukotanage</span>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

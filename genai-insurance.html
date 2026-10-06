@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GenAI insurance document extraction | Mishara Sapukotanage</title>
+  <meta name="description" content="An LLM pipeline that extracts schema-checked JSON from synthetic insurance documents and merges it per document, with an honest look at a small downstream risk classifier.">
+  <link rel="canonical" href="https://misharasapu.github.io/genai-insurance.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mishara Sapukotanage">
+  <meta property="og:title" content="GenAI insurance document extraction">
+  <meta property="og:description" content="Chunked LLM extraction into a strict schema, merged MapReduce-style, on 14 synthetic insurance documents.">
+  <meta property="og:url" content="https://misharasapu.github.io/genai-insurance.html">
+  <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mishara Sapukotanage: portfolio of computer vision, LLM and data science projects">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..700&amp;family=Instrument+Sans:wght@400..600&amp;family=Martian+Mono:wdth,wght@87.5,400..500&amp;display=swap">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">MS <span class="wordmark__full">Mishara Sapukotanage</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="case__head wrap">
+        <a class="back" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>All work</a>
+        <h1 class="case__title">GenAI insurance document extraction</h1>
+        <p class="case__outcome">An LLM pipeline that reads messy synthetic insurance documents in overlapping chunks, returns schema-checked JSON for each chunk and merges it into one record per document, with a small classifier on top that showed me exactly where a 14-document dataset runs out.</p>
+
+        <div class="case__intro">
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>Self-built project to practise GenAI extraction and feature engineering on realistic insurance documents</dd></div>
+            <div class="spec__row"><dt>My part</dt><dd>Sole author</dd></div>
+            <div class="spec__row"><dt>Data</dt><dd>14 synthetic documents: 8 policies, 3 ESG reports, 3 incident reports</dd></div>
+            <div class="spec__row"><dt>Stack</dt><dd>Python, Groq API (LLaMA), pandas, scikit-learn, Jupyter</dd></div>
+            <div class="spec__row"><dt>Status</dt><dd>Complete, on synthetic data only</dd></div>
+            <div class="spec__row spec__row--wide"><dt>Links</dt><dd><a href="https://github.com/Misharasapu/genai-insurance-risk-extraction">Code on GitHub</a></dd></div>
+          </dl>
+
+          <div class="diagram" role="group" aria-labelledby="genai-flow">
+            <p class="label" id="genai-flow">Pipeline</p>
+              <ol class="flow" aria-label="Extraction and modelling pipeline">
+                <li class="flow__step"><span class="label">01</span><b>Chunk</b><span>About 250 words with a 50-word overlap</span></li>
+                <li class="flow__step"><span class="label">02</span><b>Extract</b><span>LLaMA via Groq fills a strict JSON schema</span></li>
+                <li class="flow__step"><span class="label">03</span><b>Validate</b><span>Each output checked against the schema and allowed values</span></li>
+                <li class="flow__step"><span class="label">04</span><b>Merge</b><span>Chunk records reduced to one record per document</span></li>
+                <li class="flow__step flow__step--out"><span class="label">05</span><b>Model</b><span>Features into logistic regression and a random forest</span></li>
+              </ol>
+          </div>
+        </div>
+
+        <div class="case__metrics">
+          <ul class="metrics" aria-label="Dataset facts and classifier result">
+            <li class="metric metric--fact">
+              <span class="metric__value">14</span>
+              <span class="metric__name">Synthetic documents</span>
+              <span class="metric__context">Policies, ESG and incident reports of about 700 to 1,900 words each</span>
+            </li>
+            <li class="metric metric--fact">
+              <span class="metric__value">7</span>
+              <span class="metric__name">Schema fields</span>
+              <span class="metric__context">Entity, region, sector, risk type, time horizon, risk factors and a summary</span>
+            </li>
+            <li class="metric">
+              <span class="metric__value">0.50</span>
+              <span class="metric__name">Classifier ROC AUC</span>
+              <span class="metric__context">On 5 test documents: chance level, so it tells me nothing about the classifier yet</span>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <section class="case-section" aria-labelledby="problem">
+          <h2 id="problem">Problem</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Insurance work starts with long, unstructured text: policy wording, ESG reports and incident reports. Before any model can use them, the useful facts, such as who the entity is, which region and sector it is in, what kind of risk it describes and over what time horizon, have to come out as consistent structured fields.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="approach">
+          <h2 id="approach">Approach</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Each document is split into overlapping chunks of about 250 words so details near a boundary are not lost, and every chunk goes to a LLaMA model through the Groq API with a prompt that asks for one strict JSON object. The outputs are validated against the schema and controlled vocabularies, and then a MapReduce-style step merges the chunk records into one record per document.</p>
+              <p>After cleaning and light normalisation, the records become features for two classifiers, logistic regression with balanced class weights and a random forest, with the train and test split made before any preprocessing so nothing leaks from the test set.</p>
+            </div>
+            <div class="decision">
+              <h3>Key decision: make the model fill a fixed schema</h3>
+              <p>Instead of asking for free-text summaries, the prompt fixes seven fields and limits risk type, region and time horizon to allowed values, which means every chunk comes back in the same shape, validation is a mechanical check rather than a judgement, and the merge step can combine records without guessing what a field means.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="results">
+          <h2 id="results">Results</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>The extraction and merge steps produced one record per document for all 14 documents. The classifier results are where the project is most useful as a lesson, because with 9 training documents and 5 test documents both models got identical scores, with a ROC AUC of 0.50, which is chance level.</p>
+            </div>
+            <div class="table-scroll" tabindex="0" role="region" aria-labelledby="genai-results">
+              <table class="data-table">
+                <caption id="genai-results">Classifier results on the 5 held-out documents (notebook 03). Both models scored identically.</caption>
+                <thead>
+                  <tr><th scope="col">Model</th><th scope="col">Precision</th><th scope="col">Recall</th><th scope="col">F1</th><th scope="col">ROC AUC</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Logistic regression</th><td>0.50</td><td>1.00</td><td>0.67</td><td>0.50</td></tr>
+                  <tr><th scope="row">Random forest</th><td>0.50</td><td>1.00</td><td>0.67</td><td>0.50</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="limits">
+          <h2 id="limits">Limitations and next steps</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <ul>
+                <li>The high-risk label is a proxy based on document type and line of business, because synthetic documents have no loss history, and document category is also one of the features, so the label partly leaks into the inputs.</li>
+                <li>Five test documents cannot support any claim about the classifier. The pipeline needs many more documents, ideally real ones with real outcomes.</li>
+                <li>I did not measure extraction accuracy against hand-labelled fields, which is what I would add first, so that schema validity and field correctness are reported separately.</li>
+                <li>Next steps I would take: retrieval-augmented extraction, SHAP for clearer feature effects, and evaluation on new unseen documents.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <nav class="next wrap" aria-label="Next project">
+        <a href="graduate-employment.html">
+          <span class="label">Next project</span>
+          <span class="next__title">Graduate employment visual analytics</span>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h2>Get in touch</h2>
+          <a class="contact-email" href="mailto:misharasapu@gmail.com">misharasapu@gmail.com</a>
+        </div>
+        <ul class="footer-links">
+          <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/mishara">LinkedIn</a></li>
+          <li><a class="btn btn--ghost" href="https://github.com/Misharasapu">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__base">
+        <span>Mishara Sapukotanage</span>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

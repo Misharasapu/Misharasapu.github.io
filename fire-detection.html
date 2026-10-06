@@ -1,84 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fire Detection Using Synthetic Data | Project Details</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Industry project with SYNOPTIX: fire detection using a ResNet-50 model trained on mixed real and synthetic images. Interpreted with Grad-CAM and evaluated with ROC/PR." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fire detection with synthetic data | Mishara Sapukotanage</title>
+  <meta name="description" content="MSc dissertation with SYNOPTIX Ltd: a ResNet-50 fire classifier trained on 2,000 real and 2,000 synthetic indoor images scored F1 0.984 on a 500-image indoor test set.">
+  <link rel="canonical" href="https://misharasapu.github.io/fire-detection.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mishara Sapukotanage">
+  <meta property="og:title" content="Fire detection with synthetic data">
+  <meta property="og:description" content="Half real, half synthetic: F1 0.984 on a 500-image indoor test set, with half the real images of the real-only model.">
+  <meta property="og:url" content="https://misharasapu.github.io/fire-detection.html">
+  <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mishara Sapukotanage: portfolio of computer vision, LLM and data science projects">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..700&amp;family=Instrument+Sans:wght@400..600&amp;family=Martian+Mono:wdth,wght@87.5,400..500&amp;display=swap">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <script src="scripts/site.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Simple top bar with back link -->
-  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
-    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">MS <span class="wordmark__full">Mishara Sapukotanage</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="detail-page">
-    <!-- Title and quick actions -->
-    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
-      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
-        Fire Detection Using Synthetic Data
-      </h1>
-      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:850px; line-height:1.6;">
-        Industry dissertation with <strong>SYNOPTIX Ltd</strong>. I built a computer vision model to detect indoor fires using a mix of real and synthetic images. The goal was strong accuracy with less real data. I used ResNet‑50 for classification, Grad‑CAM for explanations, and standard ROC/PR evaluation.
-      </p>
-      <div class="card-actions" style="justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/misharasapu/fire-detection-dissertation" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="assets/fire-detection-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+  <main id="main">
+    <article>
+      <header class="case__head wrap">
+        <a class="back" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>All work</a>
+        <h1 class="case__title">Fire detection with synthetic data</h1>
+        <p class="case__outcome">A fire classifier trained on 2,000 real and 2,000 synthetic indoor images scored F1 0.984 on a 500-image indoor test set, slightly above a model trained on twice as many real images, which means half of the hard-to-collect real fire images could be replaced with rendered ones in this setting.</p>
+
+        <div class="case__intro">
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>MSc Data Science dissertation, University of Bristol, on a project set by SYNOPTIX Ltd</dd></div>
+            <div class="spec__row"><dt>My part</dt><dd>Sole author: experiment design, data pipeline, training, evaluation and Grad-CAM analysis</dd></div>
+            <div class="spec__row"><dt>Date</dt><dd>Submitted August 2025</dd></div>
+            <div class="spec__row"><dt>Grade</dt><dd>75%</dd></div>
+            <div class="spec__row"><dt>Stack</dt><dd>Python, PyTorch, torchvision (ResNet-50), scikit-learn, matplotlib, Google Colab</dd></div>
+            <div class="spec__row"><dt>Status</dt><dd>Research. Recommended for deployment in the report, not deployed</dd></div>
+            <div class="spec__row spec__row--wide"><dt>Links</dt><dd><a href="https://github.com/Misharasapu/fire-detection-dissertation">Code on GitHub</a> &middot; <a href="assets/fire-detection-report.pdf">Full report (PDF, 41 pages)</a></dd></div>
+          </dl>
+
+          <figure class="figure">
+            <div class="figure__frame">
+              <img src="assets/figures/fire-detection/gradcam-phase1-dfire.webp" width="1600" height="542" alt="Three panels: a night-time CCTV frame of a fire, its Grad-CAM heatmap, and the heatmap overlaid on the frame. The brightest area of the heatmap sits on the flames.">
+            </div>
+            <figcaption><span class="label">Report figure 4.14</span>Grad-CAM shows which parts of an image drove the prediction, and here it sits on the flames. This is the outdoor baseline model on a D-Fire test image, not the final indoor model.</figcaption>
+          </figure>
+        </div>
+
+        <div class="case__metrics">
+          <ul class="metrics" aria-label="Headline results for the final indoor model">
+            <li class="metric">
+              <span class="metric__value">0.984</span>
+              <span class="metric__name">F1 score</span>
+              <span class="metric__context">Balances missed fires against false alarms. Real-only model with twice the real images: 0.980</span>
+            </li>
+            <li class="metric">
+              <span class="metric__value">0.972</span>
+              <span class="metric__name">MCC</span>
+              <span class="metric__context">Matthews correlation, which stays honest when the classes are uneven. Real-only: 0.964</span>
+            </li>
+            <li class="metric">
+              <span class="metric__value">2 / 5</span>
+              <span class="metric__name">False alarms / missed fires</span>
+              <span class="metric__context">Out of 279 no-fire and 221 fire images. Real-only: 6 / 3</span>
+            </li>
+          </ul>
+          <p class="case__metrics-note">All three measured on the PLOS ONE indoor test split (500 images) at a fixed 0.5 decision threshold, from one training run.</p>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <section class="case-section" aria-labelledby="problem">
+          <h2 id="problem">Problem</h2>
+          <div class="case-section__body prose">
+            <p>Real images of indoor fires are rare, unsafe to stage and slow to label, so a camera-based fire detector for factories and warehouses is always short of the data it needs most. SYNOPTIX wanted to know whether synthetic images, which are rendered fire scenes that come with exact labels, could fill that gap without costing accuracy.</p>
+            <p>I turned that into four questions: can synthetic data replace or only complement real images, which mix of the two works best, does synthetic data help when a model trained outdoors is used indoors, and can a model reach the accuracy needed for deployment with fewer real indoor images.</p>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="approach">
+          <h2 id="approach">Approach</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>I treated it as binary image classification (fire or no fire), because a single yes or no per frame is light enough for an early-warning system, and used a ResNet-50 pretrained on ImageNet. The work ran in four phases so that each one changed only one thing:</p>
+              <ul>
+                <li><strong>Phase 1, frozen outdoor models.</strong> Only the final layer was trained, comparing real-only, synthetic-only and mixes of 25, 50 and 75% synthetic images, tested on D-Fire.</li>
+                <li><strong>Phase 2, fine-tuned outdoor models.</strong> The last residual block was retrained as well, for real-only, synthetic-only and the 50/50 mix.</li>
+                <li><strong>Phase 3, outdoor to indoor.</strong> The Phase 2 models were tested on indoor PLOS ONE images without retraining, to measure domain shift, which basically means how much a model suffers when the scenes look different from its training data.</li>
+                <li><strong>Phase 4, indoor.</strong> A model trained on 2,000 real PLOS ONE images plus 2,000 synthetic SYN-FIRE images, against one trained on real indoor images only.</li>
+              </ul>
+              <p>The real data came from D-Fire (21,527 outdoor images) and PLOS ONE (5,000 indoor images), and the synthetic data from Yunnan MSFFD (3,946 outdoor scenes rendered in Unreal Engine 5) and SYN-FIRE (2,030 indoor renders).</p>
+            </div>
+
+            <div class="decision">
+              <h3>Key decision: fix the dataset size so only the mix changes</h3>
+              <p>Every mixed training set had the same number of images (5,260 outdoor, 4,000 indoor), drawn with one fixed random seed, so when one mix beat another the difference came from what was in the data and not from how much of it there was. The one deliberate exception was the real-only outdoor baseline, which used the full real training pool so that it could act as the ceiling to compare against.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="results">
+          <h2 id="results">Results</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Mixing real and synthetic images beat synthetic-only training in every phase. Outdoors, the real-only models stayed ahead, but they used about five times as many real images. Synthetic-only training on the frozen model (Phase 1) collapsed on real photos, calling almost every outdoor image a fire (specificity 0.090), because the synthetic sets are mostly or entirely fire-positive, so the model never learned what a normal scene looks like.</p>
+              <p>The outdoor-to-indoor test is where the mix helped most. The fine-tuned real-only model kept its precision indoors but its recall fell from 0.930 to 0.756, so it missed about a quarter of indoor fires, while the 50/50 model held recall at 0.796 and scored F1 0.878 against 0.852. Indoors, the mix came out ahead: the 50/50 model trained on 2,000 real images edged out the real-only model trained on 4,000.</p>
+            </div>
+
+            <div class="table-scroll" tabindex="0" role="region" aria-labelledby="results-caption">
+              <table class="data-table">
+                <caption id="results-caption">Real-only against 50/50 at each phase (report table 4.5). Error counts are not comparable between test sets: the D-Fire test split has about 4,300 images, PLOS ONE has 500.</caption>
+                <thead>
+                  <tr><th scope="col">Phase and model</th><th scope="col">Test set</th><th scope="col">F1</th><th scope="col">MCC</th><th scope="col">False alarms</th><th scope="col">Missed fires</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">1 Real-only</th><td>D-Fire</td><td>0.852</td><td>0.804</td><td>116</td><td>201</td></tr>
+                  <tr><th scope="row">1 50/50</th><td>D-Fire</td><td>0.781</td><td>0.708</td><td>205</td><td>269</td></tr>
+                  <tr><th scope="row">2 Real-only</th><td>D-Fire</td><td>0.945</td><td>0.926</td><td>43</td><td>78</td></tr>
+                  <tr><th scope="row">2 50/50</th><td>D-Fire</td><td>0.916</td><td>0.887</td><td>83</td><td>102</td></tr>
+                  <tr><th scope="row">3 Real-only</th><td>PLOS ONE</td><td>0.852</td><td>0.776</td><td>4</td><td>54</td></tr>
+                  <tr><th scope="row">3 50/50</th><td>PLOS ONE</td><td>0.878</td><td>0.809</td><td>4</td><td>45</td></tr>
+                  <tr><th scope="row">4 Real-only</th><td>PLOS ONE</td><td>0.980</td><td>0.964</td><td>6</td><td>3</td></tr>
+                  <tr class="is-key"><th scope="row">4 50/50 (recommended)</th><td>PLOS ONE</td><td>0.984</td><td>0.972</td><td>2</td><td>5</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <figure class="figure">
+              <div class="cm" role="table" aria-label="Confusion matrix for the recommended indoor 50/50 model on the PLOS ONE test set">
+                <div class="cm__row" role="row">
+                  <span class="cm__head" role="columnheader">True \ predicted</span>
+                  <span class="cm__head" role="columnheader">No fire</span>
+                  <span class="cm__head" role="columnheader">Fire</span>
+                </div>
+                <div class="cm__row" role="row">
+                  <span class="cm__head" role="rowheader">No fire (279)</span>
+                  <span class="cm__cell" role="cell"><b>277</b><span>correct</span></span>
+                  <span class="cm__cell cm__cell--error" role="cell"><b>2</b><span>false alarms</span></span>
+                </div>
+                <div class="cm__row" role="row">
+                  <span class="cm__head" role="rowheader">Fire (221)</span>
+                  <span class="cm__cell cm__cell--error" role="cell"><b>5</b><span>missed</span></span>
+                  <span class="cm__cell" role="cell"><b>216</b><span>caught</span></span>
+                </div>
+              </div>
+              <figcaption><span class="label">Report figure 4.13</span>Confusion matrix for the recommended indoor 50/50 model on the PLOS ONE test split.</figcaption>
+            </figure>
+
+            <div class="prose">
+              <h3>Evaluation context</h3>
+              <p>The indoor results use PLOS ONE's own test split of 500 images (221 fire, 279 no fire), kept apart from training. The outdoor results use a fixed D-Fire test split of about 4,300 images. Every model used a 0.5 decision threshold, F1 to pick the best checkpoint, and the same training recipe: 5 epochs, Adam, learning rate 0.0001, batch size 32 and one random seed (42).</p>
+            </div>
+
+            <figure class="figure">
+              <div class="figure__frame">
+                <img src="assets/figures/fire-detection/gradcam-phase2-indoor-miss.webp" width="1180" height="384" loading="lazy" alt="Three panels: a garden patio heater with a small flame, its Grad-CAM heatmap, and the overlay. The heatmap is strongest on the trees in the top right, away from the flame.">
+              </div>
+              <figcaption><span class="label">Report figure 4.15</span>A fire from the indoor test set that the outdoor-trained 50/50 model missed: its attention went to the background instead of the small flame, which is what domain shift looks like in practice.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="limits">
+          <h2 id="limits">Limitations and next steps</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <ul>
+                <li>The mixed model raised fewer false alarms than the real-only one (2 against 6) but missed more fires (5 against 3), so for a safety system the threshold should be tuned per site from the precision-recall curve rather than left at 0.5.</li>
+                <li>Every result comes from one random seed and 5 epochs, so I have not measured how much the numbers move between runs, and longer training with repeated seeds is the first thing I would add.</li>
+                <li>The synthetic sets were mostly or entirely fire-positive, so every no-fire example came from real data, and synthetic no-fire scenes would test the idea more fairly.</li>
+                <li>I skipped ImageNet normalisation after it made early fine-tuning unstable, which may have held back the fine-tuned models.</li>
+                <li>The work covers single-image classification on public datasets only. Detection, segmentation or video models that use motion, tested on the partner's own camera footage, would be the next step towards a real deployment.</li>
+              </ul>
+            </div>
+            <figure class="figure">
+              <div class="figure__frame">
+                <img src="assets/figures/fire-detection/gradcam-phase4-faint-flames.webp" width="1200" height="392" loading="lazy" alt="Three panels: a log pile with a small flame at the lower left, its Grad-CAM heatmap, and the overlay. The heatmap is spread in a band across the image rather than focused on the flame.">
+              </div>
+              <figcaption><span class="label">Report figure 4.16</span>One of the recommended model's five misses: the heatmap partly overlaps faint smoke but misses the small flames, which is the kind of early-stage fire a deployed system most needs to catch.</figcaption>
+            </figure>
+          </div>
+        </section>
       </div>
-    </section>
 
-    <!-- Hero visual -->
-    <section style="padding:0 20px 30px;">
-      <figure style="max-width:1000px; margin:0 auto;">
-        <img
-          class="thumb"
-          src="assets/fire-gradcam.png"
-          alt="Grad-CAM overlay showing the model focusing on flame regions for indoor fire detection"
-          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
-        />
-        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
-          Grad‑CAM visualisation highlights the areas the model uses to detect flames.
-        </figcaption>
-      </figure>
-    </section>
-
-    <!-- Content -->
-    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
-      <p style="color:#cccccc;">
-        Real indoor fire images are hard to collect and label. We wanted to see if synthetic images could replace a large share of the real data while keeping low false alarms and high recall for a CCTV setting.
-      </p>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
-      <ul class="bullets">
-        <li>Trained and fine tuned a ResNet‑50 classifier on different mixes of real and synthetic images.</li>
-        <li>Kept dataset sizes fixed with a set random seed for fair comparison. Used simple [0, 1] scaling.</li>
-        <li>Evaluated with ROC and PR curves, confusion matrices, and per class metrics. Used Grad‑CAM to check if the model focused on flames and smoke.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
-      <ul class="bullets">
-        <li><strong>Dissertation grade: 75%</strong></li>
-        <li><strong>Indoor deployment mix (50% real, 50% synthetic):</strong> F1 0.984, MCC 0.972, ROC AUC about 0.999 on the indoor test set.</li>
-        <li><strong>Domain shift:</strong> The 50/50 fine tuned model beat real only training when moving from outdoor to indoor images.</li>
-        <li><strong>Data efficiency:</strong> The mixed data model reached strong performance with far fewer real images compared with real only training.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
-      <p style="color:#cccccc;">
-        Python, PyTorch (ResNet‑50), torchvision, scikit‑learn, matplotlib, Grad‑CAM. Experiments run in Google Colab with saved JSON metrics and plots.
-      </p>
-
-      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/misharasapu/fire-detection-dissertation" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="assets/fire-detection-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
-        <a class="btn btn-secondary" href="index.html">Back to home</a>
-      </div>
-    </section>
+      <nav class="next wrap" aria-label="Next project">
+        <a href="job-application-pipeline.html">
+          <span class="label">Next project</span>
+          <span class="next__title">Job application pipeline</span>
+        </a>
+      </nav>
+    </article>
   </main>
 
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h2>Get in touch</h2>
+          <a class="contact-email" href="mailto:misharasapu@gmail.com">misharasapu@gmail.com</a>
+        </div>
+        <ul class="footer-links">
+          <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/mishara">LinkedIn</a></li>
+          <li><a class="btn btn--ghost" href="https://github.com/Misharasapu">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__base">
+        <span>Mishara Sapukotanage</span>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

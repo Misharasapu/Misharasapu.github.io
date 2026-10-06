@@ -1,85 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Word Clustering and Nonlinear Classification — Project Details</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Unsupervised word clustering with HAC on literary text and supervised nonlinear classification on synthetic data comparing logistic regression with a shallow neural network." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Word clustering and nonlinear classification | Mishara Sapukotanage</title>
+  <meta name="description" content="MSc Data Science AI project: hierarchical clustering of words from three Gothic novels, and a controlled comparison of logistic regression and a neural network on a curved boundary.">
+  <link rel="canonical" href="https://misharasapu.github.io/word-clustering.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mishara Sapukotanage">
+  <meta property="og:title" content="Word clustering and nonlinear classification">
+  <meta property="og:description" content="Ward clustering of Gothic novels, and when a small neural network beats logistic regression (F1 0.967 vs 0.796).">
+  <meta property="og:url" content="https://misharasapu.github.io/word-clustering.html">
+  <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mishara Sapukotanage: portfolio of computer vision, LLM and data science projects">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..700&amp;family=Instrument+Sans:wght@400..600&amp;family=Martian+Mono:wdth,wght@87.5,400..500&amp;display=swap">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <script src="scripts/site.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Simple top bar with back link -->
-  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
-    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">MS <span class="wordmark__full">Mishara Sapukotanage</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="detail-page">
-    <!-- Title and quick actions -->
-    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
-      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
-        Word Clustering and Nonlinear Classification
-      </h1>
-      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:900px; line-height:1.6;">
-        Two-part AI coursework. Task one builds unsupervised clusters of frequent words from Gothic fiction using hierarchical agglomerative clustering. 
-        Task two explores nonlinear decision boundaries on synthetic data, comparing logistic regression with a shallow neural network.
-      </p>
-      <div class="card-actions" style="justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/misharasapu/ai-word-clustering-and-nonlinear-classification" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="assets/ai-project-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+  <main id="main">
+    <article>
+      <header class="case__head wrap">
+        <a class="back" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>All work</a>
+        <h1 class="case__title">Word clustering and nonlinear classification</h1>
+        <p class="case__outcome">Two-part AI project: clustering words from three Gothic novels by how they appear together in sentences, and a controlled test of when a small neural network beats logistic regression on a curved boundary.</p>
+
+        <div class="case__intro">
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>MSc Data Science, University of Bristol (artificial intelligence)</dd></div>
+            <div class="spec__row"><dt>Year</dt><dd>2025</dd></div>
+            <div class="spec__row"><dt>Stack</dt><dd>Python, NumPy, pandas, scikit-learn (hierarchical clustering, K-Means, logistic regression, MLP), matplotlib</dd></div>
+            <div class="spec__row"><dt>Status</dt><dd>Complete</dd></div>
+            <div class="spec__row spec__row--wide"><dt>Links</dt><dd><a href="https://github.com/Misharasapu/ai-word-clustering-and-nonlinear-classification">Code on GitHub</a> &middot; <a href="assets/ai-project-report.pdf">Report (PDF)</a></dd></div>
+          </dl>
+
+            <figure class="figure">
+              <div class="figure__frame">
+                <img src="assets/figures/word-clustering/decision-boundary.webp" width="1400" height="1196" alt="Scatter plot of 500 synthetic points in two classes, red above and blue below a dashed curved decision boundary.">
+              </div>
+              <figcaption><span class="label">Synthetic dataset</span>The two-class dataset with its curved boundary, y = 0.5x&sup2; + x, used to compare the two classifiers.</figcaption>
+            </figure>
+        </div>
+
+        <div class="case__metrics">
+          <ul class="metrics" aria-label="Results for the two tasks">
+            <li class="metric">
+              <span class="metric__value">0.198</span>
+              <span class="metric__name">Silhouette score</span>
+              <span class="metric__context">Ward linkage, the best of the linkages tried; K-Means scored 0.149</span>
+            </li>
+            <li class="metric">
+              <span class="metric__value">0.967</span>
+              <span class="metric__name">Neural network F1</span>
+              <span class="metric__context">500 points, curvature 0.5</span>
+            </li>
+            <li class="metric">
+              <span class="metric__value">0.796</span>
+              <span class="metric__name">Logistic regression F1</span>
+              <span class="metric__context">Same dataset, where a straight boundary cannot follow the curve</span>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <section class="case-section" aria-labelledby="problem">
+          <h2 id="problem">Problem</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Two questions: can meaningful groups of words be found from text with no labels at all, and when is a flexible model actually needed instead of a simple linear one?</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="approach">
+          <h2 id="approach">Approach</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>For the words I combined Dracula, Frankenstein and The Picture of Dorian Gray, built a sentence-level co-occurrence matrix and compared hierarchical clustering with several linkage methods against K-Means. For classification I generated two-dimensional data with a curved class boundary and compared logistic regression with a small neural network while varying the curvature, the dataset size, the class imbalance and the network size.</p>
+            </div>
+            <div class="decision">
+              <h3>Key decision: change one factor at a time</h3>
+              <p>Each classification experiment varied a single thing, from boundary curvature between 0 and 3 to minority classes of 20% down to 8%, so a change in the result could be put down to that factor and not to a mix of them.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="results">
+          <h2 id="results">Results</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Ward linkage gave the most coherent word groups, including clusters of character names and of existential and emotional words, although a silhouette score of 0.198 still means the clusters overlap. On the curved dataset the neural network followed the boundary that logistic regression could only approximate with a straight line.</p>
+            </div>
+            <div class="table-scroll" tabindex="0" role="region" aria-labelledby="wc-results">
+              <table class="data-table">
+                <caption id="wc-results">Results on the 500-point dataset with curvature a = 0.5 (report table 4).</caption>
+                <thead>
+                  <tr><th scope="col">Model</th><th scope="col">Accuracy</th><th scope="col">Precision</th><th scope="col">Recall</th><th scope="col">F1</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Logistic regression</th><td>0.873</td><td>0.787</td><td>0.804</td><td>0.796</td></tr>
+                  <tr class="is-key"><th scope="row">Neural network</th><td>0.980</td><td>0.978</td><td>0.957</td><td>0.967</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="limits">
+          <h2 id="limits">Limitations and next steps</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <ul>
+                <li>A silhouette of 0.198 is weak separation, so the word clusters are best read as themes rather than clean categories.</li>
+                <li>Three novels is a small corpus; embeddings trained on more text would be a fairer test of the idea.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
 
-    <!-- Hero visual (Task 2: decision boundary) -->
-    <section style="padding:0 20px 30px;">
-      <figure style="max-width:1000px; margin:0 auto;">
-        <img
-          class="thumb"
-          src="assets/ai-decision-boundary.png"
-          alt="Nonlinear decision boundary separating two classes on synthetic data"
-          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
-        />
-        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
-          Task two decision boundary. A shallow neural network captures curvature that a linear logistic model cannot.
-        </figcaption>
-      </figure>
-    </section>
-
-    <!-- Content -->
-    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
-      <p style="color:#cccccc;">
-        Discover structure in text without labels and then compare linear versus nonlinear classifiers on a controlled dataset. 
-        The goal is to show when simple models are sufficient and when flexible function classes are needed.
-      </p>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
-      <ul class="bullets">
-        <li><strong>Word clustering:</strong> built a word co-occurrence matrix from Gothic fiction chapters, then applied hierarchical agglomerative clustering with an appropriate distance linkage to form semantic groups. Visualised with dendrograms.</li>
-        <li><strong>Nonlinear classification:</strong> generated a two-class synthetic dataset with curved class boundaries. Trained logistic regression and a small feed-forward neural network with regularisation and early stopping.</li>
-        <li><strong>Evaluation:</strong> assessed cluster interpretability qualitatively and compared classifiers with standard accuracy metrics and decision boundary plots.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
-      <ul class="bullets">
-        <li>HAC produced coherent word groups that reflected character names, settings, and thematic vocabulary from the corpus.</li>
-        <li>The neural network model recovered the curved boundary and achieved higher accuracy than logistic regression on the nonlinear dataset.</li>
-        <li>Logistic regression remained competitive on more linearly separable configurations and provided interpretable coefficients.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
-      <p style="color:#cccccc;">
-        Python, NumPy, pandas, scikit-learn (HAC, logistic regression, MLPClassifier), matplotlib. Reproducible notebooks and fixed seeds.
-      </p>
-
-      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/misharasapu/ai-word-clustering-and-nonlinear-classification" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="assets/ai-project-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
-        <a class="btn btn-secondary" href="index.html">Back to home</a>
-      </div>
-    </section>
+      <nav class="next wrap" aria-label="Next project">
+        <a href="gas-network-rl.html">
+          <span class="label">Next project</span>
+          <span class="next__title">Gas network resilience with reinforcement learning</span>
+        </a>
+      </nav>
+    </article>
   </main>
 
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h2>Get in touch</h2>
+          <a class="contact-email" href="mailto:misharasapu@gmail.com">misharasapu@gmail.com</a>
+        </div>
+        <ul class="footer-links">
+          <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/mishara">LinkedIn</a></li>
+          <li><a class="btn btn--ghost" href="https://github.com/Misharasapu">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__base">
+        <span>Mishara Sapukotanage</span>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

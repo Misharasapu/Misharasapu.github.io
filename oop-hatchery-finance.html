@@ -1,83 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Modelling Systems & Markets in Python — Project Details</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Two-part project: Python OOP simulation of a fish hatchery and a finance notebook comparing stocks vs crypto with reproducible EDA." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modelling systems and markets in Python | Mishara Sapukotanage</title>
+  <meta name="description" content="MSc Data Science programming project: an object-oriented fish hatchery simulation and an exploratory comparison of stocks and cryptocurrencies.">
+  <link rel="canonical" href="https://misharasapu.github.io/oop-hatchery-finance.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mishara Sapukotanage">
+  <meta property="og:title" content="Modelling systems and markets in Python">
+  <meta property="og:description" content="An object-oriented hatchery simulation and a stocks versus crypto exploratory analysis.">
+  <meta property="og:url" content="https://misharasapu.github.io/oop-hatchery-finance.html">
+  <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mishara Sapukotanage: portfolio of computer vision, LLM and data science projects">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..700&amp;family=Instrument+Sans:wght@400..600&amp;family=Martian+Mono:wdth,wght@87.5,400..500&amp;display=swap">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <script src="scripts/site.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Simple top bar with back link -->
-  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
-    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">MS <span class="wordmark__full">Mishara Sapukotanage</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="detail-page">
-    <!-- Title and quick actions -->
-    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
-      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
-        Modelling Systems & Markets in Python
-      </h1>
-      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:900px; line-height:1.6;">
-        Two-part project: a cleanly designed Python OOP simulation for hatchery operations,
-        and a finance notebook that analyses stocks and crypto with reproducible EDA.
-      </p>
-      <div class="card-actions" style="justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/Misharasapu/oop-hatchery-simulation-and-finance-eda" target="_blank" rel="noopener">View repo</a>
+  <main id="main">
+    <article>
+      <header class="case__head wrap">
+        <a class="back" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>All work</a>
+        <h1 class="case__title">Modelling systems and markets in Python</h1>
+        <p class="case__outcome">Two-part Python project: an object-oriented simulation of a fish hatchery's quarterly operations, and an exploratory analysis comparing how stocks and cryptocurrencies behaved from 2020 to 2023.</p>
+
+        <div class="case__intro">
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>MSc Data Science, University of Bristol (Software Development: Programming and Algorithms)</dd></div>
+            <div class="spec__row"><dt>Stack</dt><dd>Python (object-oriented design), pandas, NumPy, matplotlib, Jupyter</dd></div>
+            <div class="spec__row"><dt>Status</dt><dd>Complete</dd></div>
+            <div class="spec__row spec__row--wide"><dt>Links</dt><dd><a href="https://github.com/Misharasapu/oop-hatchery-simulation-and-finance-eda">Code on GitHub</a></dd></div>
+          </dl>
+
+            <figure class="figure">
+              <div class="figure__frame">
+                <img src="assets/figures/oop-hatchery-finance/cumulative-returns.webp" width="1600" height="893" alt="Line chart of the cumulative return of one dollar invested from January 2020 to January 2023: stocks rise gently, crypto climbs to a sharp peak in late 2021 and then falls.">
+              </div>
+              <figcaption><span class="label">Notebook figure</span>Cumulative return of $1 invested in the stocks and the cryptocurrencies in the analysis, January 2020 to January 2023.</figcaption>
+            </figure>
+        </div>
+
+        <div class="case__metrics">
+          <ul class="metrics" aria-label="Project scope">
+            <li class="metric metric--fact">
+              <span class="metric__value">5</span>
+              <span class="metric__name">Simulation classes</span>
+              <span class="metric__context">Hatchery, warehouse, supplier, technician and fish species</span>
+            </li>
+            <li class="metric metric--fact">
+              <span class="metric__value">2</span>
+              <span class="metric__name">Asset classes compared</span>
+              <span class="metric__context">Stocks such as Apple and Tesla against cryptocurrencies such as Bitcoin and Ethereum</span>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <section class="case-section" aria-labelledby="problem">
+          <h2 id="problem">Problem</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Two tasks: build a maintainable text-based simulation of a fish hatchery's quarterly operations, and run a clear, reproducible analysis of how stocks and cryptocurrencies compare on returns, volatility and trading activity.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="approach">
+          <h2 id="approach">Approach</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>The simulation separates responsibilities into classes for the hatchery, warehouse, supplier, technicians and fish species, covering cash flow and labour, stock and depreciation, supplier prices, species requirements and technician wages. For the analysis I collected real market data, cleaned it and compared returns, volatility and trading activity across the two asset classes.</p>
+            </div>
+            <div class="decision">
+              <h3>Key decision: one responsibility per class</h3>
+              <p>Each class owns one part of the hatchery, so changing how suppliers price stock or how technicians are paid touches one file, and the main loop only coordinates them.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="results">
+          <h2 id="results">Results</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>The simulation runs complete quarterly cycles with hiring and firing, sales limited by labour and stock, depreciation and restocking, with a console summary each quarter. The analysis shows crypto's much larger swings next to the steadier stock returns over the same period.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="limits">
+          <h2 id="limits">Limitations and next steps</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <ul>
+                <li>The simulation is text-based with fixed rules, so it models operations rather than optimising them.</li>
+                <li>The market comparison is exploratory and covers one three-year window, so it describes that period rather than predicting future returns.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
 
-    <!-- Hero visual (Finance EDA) -->
-    <section style="padding:0 20px 30px;">
-      <figure style="max-width:1000px; margin:0 auto;">
-        <img
-          class="thumb"
-          src="assets/finance-cumulative.png"
-          alt="Cumulative returns comparison for equity and crypto series"
-          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
-        />
-        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
-          Finance EDA, cumulative returns. The notebook contrasts equity and crypto behaviour with consistent preprocessing and metrics.
-        </figcaption>
-      </figure>
-    </section>
-
-    <!-- Content -->
-    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
-      <p style="color:#cccccc;">
-        Build a maintainable simulation for quarterly operations and a clear, reproducible analysis pipeline for market data.
-        The aim is robust engineering in Task 1 and trustworthy analytics in Task 2.
-      </p>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
-      <ul class="bullets">
-        <li><strong>Task 1:</strong> modular classes for the core entities (hatchery, warehouse, supplier, technicians, fish species). Responsibilities are separated: cash flow and labour, stock and depreciation, vendor pricing, species requirements, and technician wages and specialty logic.</li>
-        <li><strong>Task 2:</strong> tidy ingest, cleaning, feature engineering, and exploratory plots. Compared risk and return profiles for equities and crypto using consistent windows and summary statistics.</li>
-        <li><strong>Reproducibility:</strong> documented methods, defensive input handling in the simulation loop, and deterministic figure export (size and DPI) from the notebook.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
-      <ul class="bullets">
-        <li><strong>Simulation:</strong> complete quarterly cycles with hiring and firing, sales within labour and stock constraints, depreciation and restocking, and clear console summaries each cycle.</li>
-        <li><strong>Analytics:</strong> clear separation between preprocessing and visuals, producing plots that make asset behaviour and volatility-return trade-offs obvious at a glance.</li>
-        <li><strong>Code quality:</strong> class docstrings, single-responsibility methods, and error handling for user input across the main loop.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
-      <p style="color:#cccccc;">
-        Python. OOP modules for the simulation, pandas, NumPy, and matplotlib for analysis, and reproducible notebooks for EDA.
-      </p>
-
-      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/Misharasapu/oop-hatchery-simulation-and-finance-eda" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="index.html">Back to home</a>
-      </div>
-    </section>
+      <nav class="next wrap" aria-label="Next project">
+        <a href="brompton.html">
+          <span class="label">Next project</span>
+          <span class="next__title">Brompton: tyre wear classification</span>
+        </a>
+      </nav>
+    </article>
   </main>
 
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h2>Get in touch</h2>
+          <a class="contact-email" href="mailto:misharasapu@gmail.com">misharasapu@gmail.com</a>
+        </div>
+        <ul class="footer-links">
+          <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/mishara">LinkedIn</a></li>
+          <li><a class="btn btn--ghost" href="https://github.com/Misharasapu">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__base">
+        <span>Mishara Sapukotanage</span>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

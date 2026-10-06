@@ -1,87 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gas Network Resilience with Reinforcement Learning — Project Details</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Q-learning controller for gas pipeline resilience during cold spells. Pandapipes simulation, reward shaping on minimum pressure, and policy convergence." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gas network resilience with reinforcement learning | Mishara Sapukotanage</title>
+  <meta name="description" content="BEng individual research project: a Q-learning agent in a pandapipes simulation learns where to add gas sources during cold-spell demand spikes.">
+  <link rel="canonical" href="https://misharasapu.github.io/gas-network-rl.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Mishara Sapukotanage">
+  <meta property="og:title" content="Gas network resilience with reinforcement learning">
+  <meta property="og:description" content="A Q-learning agent that keeps a simulated gas network's pressure stable through cold spells.">
+  <meta property="og:url" content="https://misharasapu.github.io/gas-network-rl.html">
+  <meta property="og:image" content="https://misharasapu.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mishara Sapukotanage: portfolio of computer vision, LLM and data science projects">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07090c">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..700&amp;family=Instrument+Sans:wght@400..600&amp;family=Martian+Mono:wdth,wght@87.5,400..500&amp;display=swap">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/pages.css">
+  <script src="scripts/site.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Simple top bar with back link -->
-  <header style="background:#1e1e1e; border-bottom:1px solid #333; padding:16px 20px; text-align:left;">
-    <a href="index.html" style="color:#cfe2ff; text-decoration:none;">← Back to home</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">MS <span class="wordmark__full">Mishara Sapukotanage</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="detail-page">
-    <!-- Title and quick actions -->
-    <section class="detail-hero" style="padding:36px 20px 24px; text-align:center;">
-      <h1 style="margin:0 0 10px; color:#4db6ac; font-size:2.2em; letter-spacing:0.3px;">
-        Gas Network Resilience with Reinforcement Learning
-      </h1>
-      <p style="margin:0 auto 18px; color:#cfcfcf; max-width:900px; line-height:1.6;">
-        Q-learning agent trained in a pandapipes simulation to keep gas-grid pressures within safe bounds during cold-spell demand spikes.
-        Policy learns where to add sources and at what rates to stabilise the network quickly.
-      </p>
-      <div class="card-actions" style="justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/Misharasapu/gas-network-resilience-rl" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="assets/gas-network-rl-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
+  <main id="main">
+    <article>
+      <header class="case__head wrap">
+        <a class="back" href="index.html#work"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>All work</a>
+        <h1 class="case__title">Gas network resilience with reinforcement learning</h1>
+        <p class="case__outcome">My BEng individual research project: a Q-learning agent in a pandapipes simulation that learned where to add gas sources during cold-spell demand spikes, bringing junction pressures back to within 10% of the reference.</p>
+
+        <div class="case__intro">
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>BEng Mechanical Engineering individual research project, University of Bristol</dd></div>
+            <div class="spec__row"><dt>My part</dt><dd>Sole author</dd></div>
+            <div class="spec__row"><dt>Year</dt><dd>2024</dd></div>
+            <div class="spec__row"><dt>Stack</dt><dd>Python, pandapipes, NumPy, pandas, matplotlib, a Q-learning agent written from scratch</dd></div>
+            <div class="spec__row"><dt>Status</dt><dd>Complete</dd></div>
+            <div class="spec__row spec__row--wide"><dt>Links</dt><dd><a href="https://github.com/Misharasapu/gas-network-resilience-rl">Code on GitHub</a> &middot; <a href="assets/gas-network-rl-report.pdf">Report (PDF)</a></dd></div>
+          </dl>
+
+            <figure class="figure">
+              <div class="figure__frame">
+                <img src="assets/figures/gas-network-rl/pipe-layout.webp" width="1000" height="800" alt="Diagram of the simulated pipe network: an orange square for the external grid at the top left, pipes branching to red junction dots and grey triangle sinks.">
+              </div>
+              <figcaption><span class="label">Simulated network</span>The pandapipes network: the orange square is the external grid, red dots are junctions and grey triangles are sinks, where gas is drawn off.</figcaption>
+            </figure>
+        </div>
+
+        <div class="case__metrics">
+          <ul class="metrics" aria-label="Results">
+            <li class="metric">
+              <span class="metric__value">&plusmn;10%</span>
+              <span class="metric__name">Pressure band reached</span>
+              <span class="metric__context">Junction pressures brought within 10% of the external grid's reference after learning</span>
+            </li>
+            <li class="metric metric--fact">
+              <span class="metric__value">50</span>
+              <span class="metric__name">Training episodes compared</span>
+              <span class="metric__context">Total reward per episode, Q-learning against random actions</span>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <section class="case-section" aria-labelledby="problem">
+          <h2 id="problem">Problem</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>Cold spells push gas demand up and can drop pressures at network junctions below safe levels. The aim was to learn which interventions, adding a gas source at a chosen location and flow rate, keep the pressure safe or restore it quickly.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="approach">
+          <h2 id="approach">Approach</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>I built the network in pandapipes with junctions, pipes, sinks for demand and an external grid as the fixed-pressure reference, then created cold-spell scenarios by raising demand with a randomly sampled increase factor. A Q-learning agent with epsilon-greedy exploration chose which source to add, and its reward pushed the network pressure towards a threshold and penalised violations.</p>
+            </div>
+            <div class="decision">
+              <h3>Key decision: use the lowest junction pressure as the state</h3>
+              <p>Q-learning needs a small, discrete state, so instead of the full pressure field I used the minimum pressure across all junctions, split into ranges. It is the number that decides whether anyone loses supply, and it kept the problem small enough to learn.</p>
+            </div>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="results">
+          <h2 id="results">Results</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <p>After learning, pressures across the junctions followed the external grid's reference closely and stayed within 10% of it. The agent's reward per episode rose quickly and stayed above random action selection, and over time it favoured a small set of source locations and flow rates.</p>
+            </div>
+            <figure class="figure">
+              <div class="figure__frame">
+                <img src="assets/figures/gas-network-rl/rewards-vs-random.webp" width="1196" height="534" loading="lazy" alt="Line chart of total reward per episode over 50 episodes: the Q-learning line rises quickly to about 24 and stays flat, while random actions fluctuate between about 13 and 22.">
+              </div>
+              <figcaption><span class="label">Report figure 13</span>Total reward per episode: the Q-learning agent (blue) settles higher and steadier than random action selection (orange, dashed).</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="case-section" aria-labelledby="limits">
+          <h2 id="limits">Limitations and next steps</h2>
+          <div class="case-section__body">
+            <div class="prose">
+              <ul>
+                <li>Using the minimum pressure as the state loses detail about the rest of the network, and a continuous-state method such as a Deep Q-Network would keep it.</li>
+                <li>The simulation allowed several sources at one location, which is a simplification of a real network.</li>
+                <li>Next steps: a wider action space with free source placement, and control of valves.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
 
-    <!-- Hero visual (pipe layout) -->
-    <section style="padding:0 20px 30px;">
-      <figure style="max-width:1000px; margin:0 auto;">
-        <img
-          class="thumb"
-          src="assets/gas-pipe-layout.png"
-          alt="Pipe network layout with external grid and three candidate source locations"
-          style="width:100%; height:auto; display:block; border:1px solid #333; border-radius:10px; background:#0f0f0f;"
-        />
-        <figcaption style="color:#a0d1cb; font-size:1em; font-weight:500; margin-top:10px; text-align:center; letter-spacing:0.2px;">
-          Simulated pipe network. Red dots are junctions, grey arrows are sinks, yellow square is the external grid.
-          The RL agent chooses among candidate source locations to restore pressure.
-        </figcaption>
-      </figure>
-    </section>
-
-    <!-- Content -->
-    <section class="detail-content" style="max-width:1000px; margin:0 auto; padding:10px 20px 40px; text-align:left;">
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Problem</h2>
-      <p style="color:#cccccc;">
-        Cold spells push demand up and can drive junction pressures below safe thresholds. The goal is to learn a control
-        policy that intervenes with minimal changes to keep the minimum network pressure within target limits.
-      </p>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Approach</h2>
-      <ul class="bullets">
-        <li><strong>Simulation:</strong> pandapipes digital twin with sinks (demand), external grid, and configurable pipe parameters.</li>
-        <li><strong>RL setup:</strong> Q-learning with epsilon-greedy exploration. State is discretised minimum pressure; actions add or adjust sources at candidate nodes.</li>
-        <li><strong>Reward shaping:</strong> positive reward for moving the min pressure toward a threshold; penalties for violations; episode ends when stable.</li>
-        <li><strong>Evaluation:</strong> pressure distribution before/after, Q-value convergence, action frequency, and reward vs random policy.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Results</h2>
-      <ul class="bullets">
-        <li>Agent converged to a stable policy that kept pressures within ±10% of the reference more consistently than random control.</li>
-        <li>Q-values and action frequencies concentrated on a small set of high-impact source locations.</li>
-        <li>Recovery time and minimum pressure improved across episodes, demonstrating resilience gains under cold-spell scenarios.</li>
-      </ul>
-
-      <h2 style="color:#4db6ac; margin:20px 0 8px;">Tech stack</h2>
-      <p style="color:#cccccc;">
-        Python, pandapipes, NumPy, pandas, matplotlib, NetworkX. Custom Q-learning implementation with reproducible training runs.
-      </p>
-
-      <div class="card-actions" style="margin-top:18px; justify-content:center; gap:10px;">
-        <a class="btn" href="https://github.com/Misharasapu/gas-network-resilience-rl" target="_blank" rel="noopener">View repo</a>
-        <a class="btn btn-secondary" href="assets/gas-network-rl-report.pdf" target="_blank" rel="noopener">View report (PDF)</a>
-        <a class="btn btn-secondary" href="index.html">Back to home</a>
-      </div>
-    </section>
+      <nav class="next wrap" aria-label="Next project">
+        <a href="oop-hatchery-finance.html">
+          <span class="label">Next project</span>
+          <span class="next__title">Modelling systems and markets in Python</span>
+        </a>
+      </nav>
+    </article>
   </main>
 
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h2>Get in touch</h2>
+          <a class="contact-email" href="mailto:misharasapu@gmail.com">misharasapu@gmail.com</a>
+        </div>
+        <ul class="footer-links">
+          <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/mishara">LinkedIn</a></li>
+          <li><a class="btn btn--ghost" href="https://github.com/Misharasapu">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__base">
+        <span>Mishara Sapukotanage</span>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
