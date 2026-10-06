@@ -17,9 +17,17 @@
 
   const css = getComputedStyle(document.documentElement);
   const token = (name) => css.getPropertyValue(name).trim();
-  const COLOURS = [token("--ice"), token("--slate"), token("--amber"), token("--frost")];
   const ICE = 0, DIM = 1, AMBER = 2;
-  const GRID = token("--gunmetal");
+  // Tokens are read lazily and only kept once they all resolve. An empty
+  // value makes canvas ignore fillStyle, which paints black dots.
+  let COLOURS = [], GRID = "", coloursReady = false;
+  function loadColours() {
+    const c = [token("--ice"), token("--slate"), token("--amber"), token("--frost")];
+    const g = token("--gunmetal");
+    if (c.every(Boolean) && g) { COLOURS = c; GRID = g; coloursReady = true; }
+    return coloursReady;
+  }
+  loadColours();
 
   // Design space; the canvas scales it to fit.
   const W = 500, H = 400;
@@ -208,8 +216,9 @@
   }
 
   // ---------- Draw one moment of the timeline ----------
-  const buckets = COLOURS.map(() => []);
+  const buckets = [[], [], [], []];
   function draw(t) {
+    if (!coloursReady && !loadColours()) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Drawing grid behind the bike, fading out as stage 1 ends
@@ -262,6 +271,8 @@
       ctx.fillStyle = COLOURS[c];
       for (let k = 0; k < pts.length; k += 2) ctx.fillRect(pts[k] - half, pts[k + 1] - half, dot, dot);
     });
+    // Hide the no-JS poster only once a frame has drawn successfully
+    frame.classList.add("is-live");
   }
 
   // ---------- Stage captions ----------
@@ -348,8 +359,8 @@
   // ---------- Wire up ----------
   resize();
   draw(0);
-  // Hide the no-JS poster only once a frame has drawn successfully
-  frame.classList.add("is-live");
+  // If the tokens were not ready yet, draw the current moment once they are
+  window.addEventListener("load", () => { if (!frame.classList.contains("is-live")) draw(elapsed); });
 
   // ?hero-t=<ms> freezes one moment of the timeline: used to check each
   // stage in headless screenshots and to export the no-JS poster.
