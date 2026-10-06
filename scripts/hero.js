@@ -429,10 +429,14 @@
     }
   }
 
+  // Re-size whenever the box no longer matches the bitmap. The first report is
+  // not skipped: on a first visit the layout can still shift (fonts, scrollbar)
+  // between the initial resize() and it, which left the hero stretched.
   if ("ResizeObserver" in window) {
-    let first = true;
     new ResizeObserver(() => {
-      if (first) { first = false; return; }
+      const rect = canvas.getBoundingClientRect();
+      const d = Math.min(window.devicePixelRatio || 1, 2);
+      if (Math.round(rect.width * d) === canvas.width && Math.round(rect.height * d) === canvas.height) return;
       resize();
       draw(elapsed);
     }).observe(canvas);
