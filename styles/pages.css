@@ -404,6 +404,10 @@
   color: color-mix(in srgb, var(--frost) 90%, var(--steel));
 }
 
+.case__head .actions {
+  margin-top: var(--s-5);
+}
+
 .case__intro {
   display: grid;
   gap: var(--s-6);
