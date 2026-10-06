@@ -49,4 +49,34 @@
   --dur-hover: 180ms;
   --dur-view: 400ms;
   --dur-reveal: 600ms;
+
+  /* Cover motion: shared primitives and the stagger steps d1 to d10 */
+  --cover-draw: 900ms;
+  --cover-pop: 600ms;
+  --cover-grow: 600ms;
+  --cover-fade: 500ms;
+  --cover-rise: 600ms;
+  --cover-hot: 300ms;
+  --cover-drift: 1400ms;
+  --cover-scroll: 2600ms;
+  --cover-d1: 150ms;
+  --cover-d2: 350ms;
+  --cover-d3: 600ms;
+  --cover-d4: 850ms;
+  --cover-d5: 1100ms;
+  --cover-d6: 1350ms;
+  --cover-d7: 1600ms;
+  --cover-d8: 1850ms;
+  --cover-d9: 2100ms;
+  --cover-d10: 2400ms;
+
+  /* Brompton cover: scan, then one category at a time, then the verdict */
+  --tyre-scan: 1400ms;
+  --tyre-tread: 1100ms;
+  --tyre-bar: 600ms;
+  --tyre-bar-1: 1450ms;
+  --tyre-bar-2: 1800ms;
+  --tyre-bar-3: 2150ms;
+  --tyre-threshold-at: 2350ms;
+  --tyre-verdict-at: 2700ms;
 }

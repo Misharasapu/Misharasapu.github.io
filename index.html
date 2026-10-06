@@ -91,7 +91,7 @@
       <div class="wrap">
         <div class="section__head">
           <h2 id="work-title">Selected work</h2>
-          <p>Four projects with the most evidence behind them, each with what I measured, the decision that mattered and what I would do next.</p>
+          <p>Four projects, each with its results, the key decision behind it and its limitations.</p>
         </div>
 
         <div class="featured">
@@ -107,6 +107,7 @@
                 <circle class="c-ink" cx="92" cy="100" r="5"/>
                 <path class="c-dim" d="M92 56v39M92 105v39M48 100h39M97 100h39M61 69l27 27M96 104l27 27M123 69l-27 27M88 104l-27 27"/>
                 <line class="c-ink tyre-scan" x1="20" y1="100" x2="164" y2="100"/>
+                <text class="c-note" x="182" y="40">Wear category</text>
                 <text x="182" y="62">Good</text>
                 <rect class="c-fill-dim" x="182" y="68" width="112" height="6"/>
                 <rect class="c-fill tyre-bar tyre-bar--1" data-grow x="182" y="68" width="26" height="6"/>
@@ -117,7 +118,7 @@
                 <rect class="c-fill-dim" x="182" y="132" width="112" height="6"/>
                 <rect class="c-amber-fill tyre-bar tyre-bar--3" data-grow x="182" y="132" width="94" height="6"/>
                 <line class="c-amber tyre-threshold" data-drop x1="256" y1="50" x2="256" y2="146" stroke-dasharray="3 3"/>
-                <text class="c-note" x="182" y="176">Illustrative only</text>
+                <text class="c-note" x="20" y="190">Illustrative categories, not scores</text>
               </svg>
             </div>
             <div class="card__body">
@@ -131,15 +132,32 @@
           </article>
           <article class="card" data-cover>
             <div class="card__cover">
-              <div class="cover-fire" aria-hidden="true">
-                <figure><img src="assets/figures/covers/fire-frame.webp" width="480" height="480" loading="lazy" alt=""><span class="label">Outdoor test image</span></figure>
-                <figure><div class="cover-fire__stack"><img src="assets/figures/covers/fire-frame.webp" width="480" height="480" loading="lazy" alt=""><img class="cover-fire__heat" src="assets/figures/covers/fire-gradcam.webp" width="480" height="480" loading="lazy" alt=""><span class="cover-fire__scan"></span></div><span class="label">Grad-CAM, outdoor model</span></figure>
-              </div>
+              <svg class="cover" viewBox="0 0 320 200" aria-hidden="true" focusable="false">
+<g transform="translate(0 14)">
+<rect class="c-panel" x="20" y="46" width="72" height="72" rx="3"/>
+<path class="c-dim cv-draw d1" pathLength="1" d="M28 108h56"/>
+<path class="c-line-ice cv-draw d2" pathLength="1" d="M56 106c-11 0-17-8-13-18 3-7 9-9 8-18 7 4 12 11 11 18 3-2 4-5 4-8 5 5 7 11 5 17-2 6-7 9-15 9z"/>
+<text x="20" y="134">Image</text>
+<path class="c-dim cv-draw d3" pathLength="1" d="M98 82h18"/>
+<rect class="c-panel cv-pop d3" x="122" y="42" width="12" height="80" rx="2"/>
+<rect class="c-panel cv-pop d4" x="138" y="50" width="12" height="64" rx="2"/>
+<rect class="c-panel cv-pop d5" x="154" y="58" width="12" height="48" rx="2"/>
+<rect class="c-panel cv-pop d6" x="170" y="66" width="12" height="32" rx="2"/>
+<text class="cv-fade d6" x="122" y="134">ResNet-50</text>
+<path class="c-dim cv-draw d7" pathLength="1" d="M188 82h14M202 82v-14h12M202 82v14h12"/>
+<rect class="c-panel cv-pop d8" x="214" y="59" width="84" height="18" rx="2"/>
+<text class="c-on cv-fade d8" x="222" y="71">Fire</text>
+<rect class="c-panel cv-pop d8" x="214" y="87" width="84" height="18" rx="2"/>
+<text class="c-on cv-fade d8" x="222" y="99">No fire</text>
+<text class="cv-fade d9" x="214" y="134">Output</text>
+</g>
+<text class="c-note" x="20" y="190">Illustrative pipeline</text>
+</svg>
             </div>
             <div class="card__body">
               <ul class="tags label"><li>Industry partner</li><li>Computer vision</li><li>2025</li></ul>
               <h3 class="card__title"><a href="fire-detection.html">Fire detection with synthetic data</a></h3>
-              <p class="card__text">An MSc dissertation with SYNOPTIX testing whether rendered fire images can replace real ones, where a model trained on half real, half synthetic indoor images matched one trained on twice the real data.</p>
+              <p class="card__text">An MSc dissertation with SYNOPTIX testing whether rendered fire images can replace real ones. Trained on half the real indoor images plus synthetic ones, the model scored a slightly higher F1 than a real-only model with twice the real data, but missed two more fires (one random seed).</p>
               <p class="card__proof">F1 0.984 <span>on a 500-image indoor test set</span></p>
               <p class="card__meta label">Code and report public</p>
             </div>
@@ -157,7 +175,7 @@
 <text x="24" y="130">Job ad</text>
 <path class="c-dim cv-draw d3" pathLength="1" d="M90 72h16"/>
 <rect class="c-panel cv-pop d3" x="112" y="44" width="70" height="56" rx="3"/>
-<text class="cv-fade d4" x="120" y="60">Fit</text>
+<text class="cv-fade d4" x="120" y="60">Fit check</text>
 <rect class="c-fill-dim cv-fade d4" x="120" y="70" width="54" height="5"/>
 <rect class="c-fill cv-grow d5" x="120" y="70" width="38" height="5"/>
 <path class="c-line cv-draw d5" pathLength="1" d="M120 86h40"/>
@@ -172,14 +190,14 @@
 <rect class="c-panel cv-pop d9" x="176" y="140" width="62" height="16"/>
 <rect class="c-panel cv-pop d9" x="240" y="140" width="44" height="16"/>
 <text x="112" y="174">Tracker row</text>
-<text class="c-note" x="24" y="190">Illustrative</text>
+<text class="c-note" x="24" y="190">Illustrative stages, not scores</text>
 </svg>
             </div>
             <div class="card__body">
               <ul class="tags label"><li>Personal project</li><li>LLM pipeline</li><li>2026</li></ul>
               <h3 class="card__title"><a href="job-application-pipeline.html">Job application pipeline</a></h3>
               <p class="card__text">Paste a job description and it assesses fit, writes a tailored one-page LaTeX CV and logs the application, with a person deciding at every step and one loop that measures its own PDF.</p>
-              <p class="card__proof card__proof--plain">Target: under 8 minutes <span>per application, not yet measured</span></p>
+              <p class="card__proof">7.2 &rarr; 0.4 <span>lines of mean first-draft CV overflow after a measured length budget, tested on 3 job descriptions</span></p>
               <p class="card__meta label">Private code</p>
             </div>
             <span class="brackets" aria-hidden="true"><i></i></span>

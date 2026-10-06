@@ -150,4 +150,10 @@ code {
     animation-delay: 0ms !important;
     transition-property: opacity, color, background-color, border-color, text-decoration-color !important;
   }
+
+  /* No press scaling either */
+  .btn:active,
+  .text-btn:active {
+    transform: none !important;
+  }
 }

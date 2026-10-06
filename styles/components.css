@@ -640,7 +640,7 @@
 
 /* Brompton tyre cover */
 .is-playing .tyre-scan {
-  animation: tyre-scan 900ms var(--ease-in-out) both;
+  animation: tyre-scan var(--tyre-scan) var(--ease-in-out) both;
 }
 
 .tyre-scan {
@@ -648,7 +648,7 @@
 }
 
 .is-playing .tyre-tread {
-  animation: tyre-wear 1100ms var(--ease-out) 150ms both;
+  animation: tyre-wear var(--tyre-tread) var(--ease-out) var(--cover-d1) both;
 }
 
 .tyre-tread {
@@ -656,19 +656,19 @@
 }
 
 .is-playing .tyre-bar {
-  animation: grow 700ms var(--ease-out) both;
+  animation: grow var(--tyre-bar) var(--ease-out) both;
 }
 
-.is-playing .tyre-bar--1 { animation-delay: 850ms; }
-.is-playing .tyre-bar--2 { animation-delay: 950ms; }
-.is-playing .tyre-bar--3 { animation-delay: 1050ms; }
+.is-playing .tyre-bar--1 { animation-delay: var(--tyre-bar-1); }
+.is-playing .tyre-bar--2 { animation-delay: var(--tyre-bar-2); }
+.is-playing .tyre-bar--3 { animation-delay: var(--tyre-bar-3); }
 
 .is-playing .tyre-threshold {
-  animation: drop 400ms var(--ease-out) 1600ms both;
+  animation: drop var(--dur-view) var(--ease-out) var(--tyre-threshold-at) both;
 }
 
 .is-playing .tyre-verdict {
-  animation: verdict 300ms var(--ease-out) 1950ms both;
+  animation: verdict var(--cover-hot) var(--ease-out) var(--tyre-verdict-at) both;
 }
 
 @keyframes tyre-scan {
@@ -813,7 +813,7 @@
 }
 
 .is-playing .cv-draw {
-  animation: cv-draw 900ms var(--ease-out) both;
+  animation: cv-draw var(--cover-draw) var(--ease-out) both;
 }
 
 .cv-pop,
@@ -835,41 +835,41 @@
   transform-origin: center bottom;
 }
 
-.is-playing .cv-pop { animation: cv-pop 420ms var(--ease-out) both; }
-.is-playing .cv-grow { animation: grow 600ms var(--ease-out) both; }
-.is-playing .cv-grow-up { animation: cv-grow-up 600ms var(--ease-out) both; }
-.is-playing .cv-fade { animation: cv-fade 500ms var(--ease-out) both; }
-.is-playing .cv-rise { animation: cv-rise 600ms var(--ease-out) both; }
-.is-playing .cv-hot { animation: verdict 300ms var(--ease-out) both; }
-.is-playing .cv-hot-stroke { animation: cv-hot-stroke 300ms var(--ease-out) both; }
-.is-playing .cv-scroll { animation: cv-scroll 2200ms var(--ease-in-out) both; }
-.is-playing .cv-drift-a { animation: cv-drift-a 1100ms var(--ease-out) both; }
-.is-playing .cv-drift-b { animation: cv-drift-b 1100ms var(--ease-out) both; }
-.is-playing .cv-drift-c { animation: cv-drift-c 1100ms var(--ease-out) both; }
-.is-playing .cv-drift-d { animation: cv-drift-d 1100ms var(--ease-out) both; }
+.is-playing .cv-pop { animation: cv-pop var(--cover-pop) var(--ease-out) both; }
+.is-playing .cv-grow { animation: grow var(--cover-grow) var(--ease-out) both; }
+.is-playing .cv-grow-up { animation: cv-grow-up var(--cover-grow) var(--ease-out) both; }
+.is-playing .cv-fade { animation: cv-fade var(--cover-fade) var(--ease-out) both; }
+.is-playing .cv-rise { animation: cv-rise var(--cover-rise) var(--ease-out) both; }
+.is-playing .cv-hot { animation: verdict var(--cover-hot) var(--ease-out) both; }
+.is-playing .cv-hot-stroke { animation: cv-hot-stroke var(--cover-hot) var(--ease-out) both; }
+.is-playing .cv-scroll { animation: cv-scroll var(--cover-scroll) var(--ease-in-out) both; }
+.is-playing .cv-drift-a { animation: cv-drift-a var(--cover-drift) var(--ease-out) both; }
+.is-playing .cv-drift-b { animation: cv-drift-b var(--cover-drift) var(--ease-out) both; }
+.is-playing .cv-drift-c { animation: cv-drift-c var(--cover-drift) var(--ease-out) both; }
+.is-playing .cv-drift-d { animation: cv-drift-d var(--cover-drift) var(--ease-out) both; }
 
-.is-playing .d1 { animation-delay: 150ms; }
-.is-playing .d2 { animation-delay: 300ms; }
-.is-playing .d3 { animation-delay: 450ms; }
-.is-playing .d4 { animation-delay: 600ms; }
-.is-playing .d5 { animation-delay: 800ms; }
-.is-playing .d6 { animation-delay: 1000ms; }
-.is-playing .d7 { animation-delay: 1250ms; }
-.is-playing .d8 { animation-delay: 1500ms; }
-.is-playing .d9 { animation-delay: 1800ms; }
-.is-playing .d10 { animation-delay: 2100ms; }
+.is-playing .d1 { animation-delay: var(--cover-d1); }
+.is-playing .d2 { animation-delay: var(--cover-d2); }
+.is-playing .d3 { animation-delay: var(--cover-d3); }
+.is-playing .d4 { animation-delay: var(--cover-d4); }
+.is-playing .d5 { animation-delay: var(--cover-d5); }
+.is-playing .d6 { animation-delay: var(--cover-d6); }
+.is-playing .d7 { animation-delay: var(--cover-d7); }
+.is-playing .d8 { animation-delay: var(--cover-d8); }
+.is-playing .d9 { animation-delay: var(--cover-d9); }
+.is-playing .d10 { animation-delay: var(--cover-d10); }
 
 @keyframes cv-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
-@keyframes cv-pop { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes cv-pop { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @keyframes cv-grow-up { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 @keyframes cv-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes cv-rise { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 @keyframes cv-hot-stroke { from { stroke: var(--slate); } to { stroke: var(--amber); } }
 @keyframes cv-scroll { from { transform: translateY(0); } to { transform: translateY(-96px); } }
-@keyframes cv-drift-a { from { transform: translate(60px, 40px); opacity: 0.3; } to { transform: none; opacity: 1; } }
-@keyframes cv-drift-b { from { transform: translate(-50px, 30px); opacity: 0.3; } to { transform: none; opacity: 1; } }
-@keyframes cv-drift-c { from { transform: translate(40px, -36px); opacity: 0.3; } to { transform: none; opacity: 1; } }
-@keyframes cv-drift-d { from { transform: translate(-44px, -30px); opacity: 0.3; } to { transform: none; opacity: 1; } }
+@keyframes cv-drift-a { from { transform: translate(20px, 14px); opacity: 0.3; } to { transform: none; opacity: 1; } }
+@keyframes cv-drift-b { from { transform: translate(-18px, 12px); opacity: 0.3; } to { transform: none; opacity: 1; } }
+@keyframes cv-drift-c { from { transform: translate(16px, -14px); opacity: 0.3; } to { transform: none; opacity: 1; } }
+@keyframes cv-drift-d { from { transform: translate(-18px, -12px); opacity: 0.3; } to { transform: none; opacity: 1; } }
 
 .cv-scroll {
   transform: translateY(-96px);
@@ -884,71 +884,3 @@
 .cover .t2 { fill: color-mix(in srgb, var(--ice) 45%, var(--void)); }
 .cover .t3 { fill: color-mix(in srgb, var(--ice) 70%, var(--void)); }
 .cover .t4 { fill: var(--ice); }
-
-/* Fire cover: real report frames, Grad-CAM wipes in */
-.cover-fire {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6%;
-  align-items: center;
-  padding: 8% 12%;
-}
-
-.cover-fire figure {
-  position: relative;
-  margin: 0;
-}
-
-.cover-fire img {
-  width: 100%;
-  aspect-ratio: 1;
-  border: 1px solid var(--gunmetal);
-}
-
-.cover-fire .label {
-  display: block;
-  margin-top: var(--s-2);
-  font-size: 0.6875rem;
-}
-
-.cover-fire__heat {
-  clip-path: inset(0 0 0 0);
-}
-
-.is-playing .cover-fire__heat {
-  animation: wipe 1200ms var(--ease-in-out) 250ms both;
-}
-
-.cover-fire__stack {
-  position: relative;
-}
-
-.cover-fire__stack .cover-fire__heat {
-  position: absolute;
-  inset: 0;
-}
-
-.cover-fire__scan {
-  position: absolute;
-  inset: 0;
-  border-left: 2px solid var(--amber);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.is-playing .cover-fire__scan {
-  animation: scan-x 1200ms var(--ease-in-out) 250ms both;
-}
-
-@keyframes wipe {
-  from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0 0 0 0); }
-}
-
-@keyframes scan-x {
-  0% { opacity: 1; transform: translateX(0); }
-  95% { opacity: 1; transform: translateX(100%); }
-  100% { opacity: 0; transform: translateX(100%); }
-}
