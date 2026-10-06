@@ -46,7 +46,7 @@ index.html, <project>.html      pages (old URLs kept, they are in sent applicati
 styles/                         tokens.css, base.css, components.css, pages.css
 scripts/                        site.js, hero.js, covers.js
 assets/figures/<project>/       WebP figures from your reports
-assets/*.pdf                    reports, and cv.pdf (placeholder for now)
+assets/*.pdf                    project reports
 _config.yml                     tells GitHub Pages which files NOT to publish
 ```
 
